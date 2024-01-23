@@ -3,27 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --color-one:#FBD757;
+  --color-two:#1e172f;
+  --color-grey:#616161;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--color-two);
+}
+
+.bg-app-yellow{
+  background-color: var(--color-one);
+}
+
+.bg-app-dark{
+  background-color: var(--color-two);
+}
+
+
+@layer components{
+  .btn-app-yellow{
+    @apply py-2 px-4 rounded-lg shadow-md bg-app-yellow;
+    color: var(--color-grey);
+  }
+  .btn-app-dark{
+    @apply py-2 px-4 rounded-lg shadow-md bg-app-dark;
+    color: var(--color-one);
+  }
 }
 
 @layer utilities {
