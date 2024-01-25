@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --color-one:#FBD757;
-  --color-two:#1e172f;
+  /* --color-one:#FBD757; */
+  --color-one:#18da38;
+  --color-two:#2b2c2d;
+  /* --color-two:#1e172f; */
   --color-grey:#616161;
 }
 
@@ -12,22 +14,33 @@ body {
   color: var(--color-two);
 }
 
-.bg-app-yellow{
+.bg-color-1{
   background-color: var(--color-one);
 }
 
-.bg-app-dark{
+.bg-color-2{
   background-color: var(--color-two);
 }
 
+.bg-app-grey{
+  background-color: var(--color-grey)
+}
+
+.color-1{
+  color: var(--color-one);
+}
+
+.color-2{
+  color: var(--color-two);
+}
 
 @layer components{
   .btn-app-yellow{
-    @apply py-2 px-4 rounded-lg shadow-md bg-app-yellow;
+    @apply py-2 px-4 rounded-lg shadow-md bg-color-1;
     color: var(--color-grey);
   }
   .btn-app-dark{
-    @apply py-2 px-4 rounded-lg shadow-md bg-app-dark;
+    @apply py-2 px-4 rounded-lg shadow-md bg-color-2;
     color: var(--color-one);
   }
 }
