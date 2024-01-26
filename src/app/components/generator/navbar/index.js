@@ -1,8 +1,8 @@
 import { DarkZone } from "./DarkZone";
-import { Logo } from "./Logo"
+import { Logo } from "./Logo";
 
-export default function () {
-  return(
+export default function Header() {
+  return (
     <header>
       <nav className="mx-auto w-full bg-color-1 flex flex-row shadow-xl" aria-label="navigation-bar for the generator page">
         <div className="w-5/6">
@@ -11,5 +11,5 @@ export default function () {
         <DarkZone />
       </nav>
     </header>
-  )
+  );
 }
