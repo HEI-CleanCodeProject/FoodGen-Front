@@ -1,5 +1,7 @@
 import styles from "./styles.module.css";
 import Image from "next/image";
+import React from "react";
+
 
 export default function Card () {
   return(

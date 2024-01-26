@@ -1,5 +1,5 @@
 "use client"
-
+import React from "react"
 import Card from "@components/generator/card"
 import Navbar from "@components/generator/navbar"
 

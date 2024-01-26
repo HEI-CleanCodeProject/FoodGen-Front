@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ReactPortal from "./ReactPortal";
+import React from "react";
 
 export default function ({ children, isOpen, handleClose }) {
   //close modal on escape key press
@@ -26,7 +27,7 @@ export default function ({ children, isOpen, handleClose }) {
       <>
         <div className="fixed top-0 left-0 w-screen h-screen z-40 bg-color-2 opacity-50"/>
         <div className="fixed rounded flex flex-col box-border min-w-fit overflow-hidden p-5 bg-app-greyinset-y-32 inset-x-12 z-50 opacity-100">
-          <button className="btn-app-dark" onClick={handleClose}>
+          <button className="btn-app-2" onClick={handleClose}>
             Close
           </button>
           <div className="box-border h-5/6">{children}</div>

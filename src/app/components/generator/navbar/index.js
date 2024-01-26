@@ -1,5 +1,6 @@
 import { UserInformationAccess } from "./UserInformationAccess";
 import { Logo } from "./Logo"
+import React from "react";
 
 export default function Header() {
   return (

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { UserIcon } from "../../Icons";
 import styles from "./styles.module.css";
 import Modal from "../modal";
+import React from "react";
 
-export function DarkZone (){
+export function UserInformationAccess (){
 const [isOpen, setIsOpen ] = useState(false);
   
   return(
