@@ -7,8 +7,8 @@
   --color-one:#6ae46a;
   --color-two:#545454;
   /* --color-two:#1e172f; */
-  --color-grey:#b5b5b559;
-  --color-three:#fac54a;
+  --color-grey:#cbcbcb4e;
+  --color-three:#f7ca63;
 }
 
 body {
@@ -41,11 +41,11 @@ body {
 
 @layer components{
   .btn-app-1{
-    @apply py-2 px-4 rounded-lg shadow-md bg-color-3;
+    @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-3;
     color: var(--color-two);
   }
   .btn-app-2{
-    @apply py-2 px-4 rounded-lg shadow-md bg-color-2;
+    @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-2;
     color: var(--color-one);
   }
 }

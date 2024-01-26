@@ -8,7 +8,7 @@ export default function Generator () {
       <div className="p-2">
         <div>
           <h3 className="p-3">Recommended for you</h3>
-          <div className="flex row">
+          <div className="flex flex-wrap row">
             <Card />
           </div>
         </div>
