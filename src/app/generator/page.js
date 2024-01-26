@@ -30,6 +30,7 @@ export default function Generator () {
           <Card />
           <Card />
         </div>
+        <button className="btn-app-1 fixed right-4 bottom-4">Regenerate</button>
       </div>
     </>
   )
