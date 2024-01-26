@@ -1,4 +1,4 @@
-export default function () {
+export default function Exemples() {
   return(
     <div>
       <p>this is exemple</p>

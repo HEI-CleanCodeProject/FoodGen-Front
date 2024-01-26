@@ -1,11 +1,12 @@
 import styles from "./styles.module.css";
+import Image from "next/image";
 
-export default function () {
+export default function Card () {
   return(
     <div className={`container bg-color-grey p-1 rounded m-2 shadow-lg ${styles["card-width"]}`}>
       <div className="w-full h-full">
         <div className="bg-color-2 h-3/6 w-full shadow-xl rounded">
-          <img alt="my image" className="w-full h-full"/>
+          <Image alt="my image" className="w-full h-full"/>
         </div>
         <div className="p-1 h-2/6">
           <h4 className="py-2">My food</h4>

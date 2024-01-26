@@ -1,7 +1,7 @@
 import Card from "@components/generator/card"
 import Navbar from "@components/generator/navbar"
 
-export default function () {
+export default function Generator () {
   return(
     <>
       <Navbar />
