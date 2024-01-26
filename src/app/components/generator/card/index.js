@@ -8,9 +8,9 @@ export default function Card () {
         <div className="bg-color-2 h-3/6 w-full shadow-xl rounded">
           <Image alt="my image" src="" className="w-full h-full"/>
         </div>
-        <div className="p-1 h-2/6">
+        <div className={`p-1 h-2/6`}>
           <h4 className="py-2">My food</h4>
-          <p>lorem upsum dolor shit hap adsf asdfjafds  ds dsafjjjdf ajdsfjadsf </p>
+          <p className={`text-elipsis ${styles["card-text-size"]}`}>lorem upsum dolor shit hap adsf asdfjafd asd adsf adsf asd fa sdf adsf ad</p>
         </div>
         <div className="h-1/6 relative">
           <button className="btn-app-1 absolute right-1 bottom-1">more</button>
