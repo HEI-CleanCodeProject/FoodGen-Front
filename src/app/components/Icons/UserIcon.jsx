@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 export function UserIcon(){
     return(
       <svg
-        className={`h-10 w-10 text-black rounded-full ${styles["on-hover"]}`}
+        className={`h-10 w-10 rounded-full ${styles["on-hover"]}`}
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
