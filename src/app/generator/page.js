@@ -13,7 +13,16 @@ export default function () {
           </div>
         </div>
         <hr className="bg-color-2 w-4/5 m-6"/>
-        <div className="flex row">
+        <div className="flex row flex-wrap">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
           <Card />
           <Card />
           <Card />

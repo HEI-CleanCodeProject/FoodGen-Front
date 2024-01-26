@@ -18,5 +18,3 @@ export default function () {
     </div>
   );
 }
-
-CardGenerator.displayName = "CardGenerator";
