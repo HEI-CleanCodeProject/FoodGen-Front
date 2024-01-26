@@ -16,5 +16,7 @@ export default function () {
         </div>
       </div>
     </div>
-  )
+  );
 }
+
+CardGenerator.displayName = "CardGenerator";
