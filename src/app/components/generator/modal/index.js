@@ -12,12 +12,12 @@ export default function ({ children, isOpen, handleClose }) {
   }, [handleClose]);
   
   //disable scrolling webiste scoll when modal is open
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-  //   return () => {
-  //     document.body.style.overflow = "unset";
-  //   };
-  // },[isOpen])
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  },[isOpen])
 
   if (!isOpen) return null;
 
