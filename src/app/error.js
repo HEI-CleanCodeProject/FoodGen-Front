@@ -1,6 +1,6 @@
 "use client"
 
-export default function( {error} ){
+export default function Error( {error} ){
   return(
     <>{error}</>
   )

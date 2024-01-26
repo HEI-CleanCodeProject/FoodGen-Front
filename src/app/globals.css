@@ -4,10 +4,11 @@
 
 :root {
   /* --color-one:#FBD757; */
-  --color-one:#18da38;
-  --color-two:#2b2c2d;
+  --color-one:#6ae46a;
+  --color-two:#545454;
   /* --color-two:#1e172f; */
-  --color-grey:#616161;
+  --color-grey:#cbcbcb4e;
+  --color-three:#f7ca63;
 }
 
 body {
@@ -18,11 +19,15 @@ body {
   background-color: var(--color-one);
 }
 
+.bg-color-3{
+  background-color: var(--color-three);
+}
+
 .bg-color-2{
   background-color: var(--color-two);
 }
 
-.bg-app-grey{
+.bg-color-grey{
   background-color: var(--color-grey)
 }
 
@@ -35,12 +40,12 @@ body {
 }
 
 @layer components{
-  .btn-app-yellow{
-    @apply py-2 px-4 rounded-lg shadow-md bg-color-1;
-    color: var(--color-grey);
+  .btn-app-1{
+    @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-3;
+    color: var(--color-two);
   }
-  .btn-app-dark{
-    @apply py-2 px-4 rounded-lg shadow-md bg-color-2;
+  .btn-app-2{
+    @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-2;
     color: var(--color-one);
   }
 }

@@ -1,10 +1,11 @@
-import image from "@public/Nyan Food.png"
 import Image from "next/image"
 
 export function Logo(){
   return(
-    <span>
-        <Image src={image} alt="logo" className="w-20 h-20"/>
+    <span className="block w-1/6 h-full">
+      <a href="#" className="w-full h-full block">
+        <Image alt="logo" src="" className="w-full h-full"/>
+      </a>
     </span> 
   )
 }
