@@ -2,6 +2,7 @@
 import React from "react"
 import Card from "@components/generator/card"
 import Navbar from "@components/generator/navbar"
+import RegenerateIcon from "../components/Icons/RegenerateIcon"
 
 export default function Generator () {
   return(
@@ -30,7 +31,12 @@ export default function Generator () {
           <Card />
           <Card />
         </div>
-        <button className="btn-app-1 fixed right-4 bottom-4">Regenerate</button>
+        <button className="btn-app-1 fixed right-4 bottom-4">
+          <div className="flex flex-row items-center">
+            <RegenerateIcon className={"text-[--color-2]"}/>
+            <span className="px-2">Regenerate</span>
+          </div>
+        </button>
       </div>
     </>
   )
