@@ -1,9 +1,13 @@
+"use client"
+import { Context } from "@/app/contextProvider";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 
 
 export default function Card () {
+  const {openModalAndDispatchData} = useContext(Context);
+
   return(
     <div className={`container bg-color-grey p-2 hover:shadow-2xl transition-all duration-200 rounded m-2 drop-shadow-xl ${styles["card-width"]}`}>
       <div className="w-full h-full">
@@ -15,7 +19,7 @@ export default function Card () {
           <p className={`text-elipsis ${styles["card-text-size"]}`}>lorem upsum dolor shit hap adsf asdfjafd asd adsf adsf asd fa sdf adsf ad</p>
         </div>
         <div className="h-1/6 relative">
-          <button className="btn-app-1 absolute right-1 bottom-1">more</button>
+          <button className="btn-app-1 absolute right-1 bottom-1" onClick={()=>{openModalAndDispatchData("oke")}}>more</button>
         </div>
       </div>
     </div>

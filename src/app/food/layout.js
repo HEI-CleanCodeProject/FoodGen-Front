@@ -1,7 +1,8 @@
 import React from "react";
 import "../globals.css";
 import Navbar from "../components/food/generator/navbar";
-
+import { FoodModal} from "../components/food/generator/FoodModal";
+import ContextProvider from "../contextProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,7 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <>
       <Navbar />
-      {children}
+      <ContextProvider>
+        <FoodModal />
+        {children}
+      </ContextProvider>
     </>
   );
 }
