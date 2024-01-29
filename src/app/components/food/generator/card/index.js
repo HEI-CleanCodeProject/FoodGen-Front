@@ -9,7 +9,7 @@ export default function Card () {
   const {openModalAndDispatchData} = useContext(Context);
 
   return(
-    <div className={`container bg-color-grey p-2 hover:shadow-2xl transition-all duration-200 rounded m-2 drop-shadow-xl ${styles["card-width"]}`}>
+    <div data-testid="Card" className={`container bg-color-grey p-2 hover:shadow-2xl transition-all duration-200 rounded m-2 drop-shadow-xl ${styles["card-width"]}`}>
       <div className="w-full h-full">
         <div className="bg-color-2 h-3/6 w-full shadow-xl rounded">
           <Image alt="my image" src="" className="w-full h-full"/>

@@ -21,7 +21,19 @@ const config = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  collectCoverageFrom: [
+    "**/*.{js,jsx}",
+    '!**/nodes_modules/**',
+    '!**/coverage/**',
+    '!**/*.config.js',
+    '!**/*.setup.js',
+    '!**/vendor/**',
+    '!**/layout.{jsx,js}',
+    '!**/error.{jsx,js}',
+    '!**/loading.{jsx,js}',
+    '!**/.next/**',
+    '!__mocks__/**'
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
@@ -90,7 +102,11 @@ const config = {
   moduleNameMapper: {
     // obsidian:
     //  "<rootDir>//node_modules/.pnpm/obsidian@1.1.1_cknrwgf45skglbt6g7kref4zeq/node_modules/obsidian",
+    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
     "./node_modules/(.*)": "<rootDir>/node_modules/$1",
+    '^@components/(.*)$': '<rootDir>/src/app/components/$1',
+    '^@app/(.*)$': '<rootDir>/src/app/$1',
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -147,7 +163,7 @@ const config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-node",
+  testEnvironment: "jest-environment-jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},

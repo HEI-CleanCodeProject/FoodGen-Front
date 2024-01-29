@@ -58,7 +58,7 @@ export default function Load() {
                   })}
                   name="email"
                   type="email"
-                  autocomplete="email"
+                  autoComplete="email"
                   required
                   className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#333]"
                   placeholder="Email address"
@@ -69,7 +69,7 @@ export default function Load() {
                   {...register("password", { required: true })}
                   name="password"
                   type="password"
-                  autocomplete="current-password"
+                  autoComplete="current-password"
                   required
                   className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#333]"
                   placeholder="Password"
