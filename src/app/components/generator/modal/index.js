@@ -12,7 +12,7 @@ export default function ({ children, isOpen, handleClose }) {
     };
   }, [handleClose]);
   
-  //disable scrolling webiste scoll when modal is open
+  //disable scrolling website scoll when modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -26,11 +26,11 @@ export default function ({ children, isOpen, handleClose }) {
     <ReactPortal wrapperId="modal-wrapper">
       <>
         <div className="fixed top-0 left-0 w-screen h-screen z-40 bg-color-2 opacity-50"/>
-        <div className="fixed rounded flex flex-col box-border min-w-fit overflow-hidden p-5 bg-app-greyinset-y-32 inset-x-12 z-50 opacity-100">
+        <div className="fixed rounded justify-center flex flex-col min-w-fit box-border overflow-hidden p-5 bg-white inset-y-32 inset-x-12 z-50 opacity-100">
+          <div className="box-border h-5/6">{children}</div>
           <button className="btn-app-2" onClick={handleClose}>
             Close
           </button>
-          <div className="box-border h-5/6">{children}</div>
         </div>
       </>
     </ReactPortal>
