@@ -1,5 +1,6 @@
 import React from "react";
-import "./globals.css";
+import "../globals.css";
+import Navbar from "../components/food/generator/navbar";
 
 
 export const metadata = {
@@ -9,10 +10,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <>
+      <Navbar />
+      {children}
+    </>
   );
 }

@@ -1,13 +1,10 @@
-"use client"
 import React from "react"
-import Card from "@components/generator/card"
-import Navbar from "@components/generator/navbar"
-import RegenerateIcon from "../components/Icons/RegenerateIcon"
+import Card from "@/app/components/food/generator/card"
+import RegenerateIcon from "@/app/components/Icons/RegenerateIcon"
 
 export default function Generator () {
   return(
-    <>
-      <Navbar />
+    <div>
       <div className="p-2">
         <div>
           <h3 className="p-3">Recommended for you</h3>
@@ -38,6 +35,6 @@ export default function Generator () {
           </div>
         </button>
       </div>
-    </>
+    </div>
   )
 }
