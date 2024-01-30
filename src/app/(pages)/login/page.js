@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useForm } from "react-hook-form";
+import { authProvider } from "@/app/providers/authProvider";
 
 export function LoginPage() {
   const {
