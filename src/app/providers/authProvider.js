@@ -1,8 +1,9 @@
 import axios, { Axios } from "axios"
-
+const baseURL= ""
 const authProvider = {
+
     login: async ({email, password}) => {
-        await axios.post('/users/login', {email, password})
+        await axios.post('{baseURL}/users/login', {email, password})
         .then(response => {
             sessionStorage.setItem("sessionToken", response.data);
             return response.data
@@ -11,7 +12,7 @@ const authProvider = {
     },
 
     logout: async () => {
-        await axios.get('/users/logout')
+        await axios.get('{baseURL}/users/logout')
         .then(() => {
             sessionStorage.removeItem("sessionStorage");
             axios.get('users/login')
