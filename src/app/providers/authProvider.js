@@ -1,8 +1,10 @@
-import axios, { Axios } from "axios"
+import axios from "axios"
 
-const authProvider = {
+const baseUrl = "";
+
+export const authProvider = {
     login: async ({email, password}) => {
-        await axios.post('/users/login', {email, password})
+        return axios.post(`${baseUrl}}/users/login`, {email, password})
         .then(response => {
             sessionStorage.setItem("sessionToken", response.data);
             return response.data
@@ -11,10 +13,9 @@ const authProvider = {
     },
 
     logout: async () => {
-        await axios.get('/users/logout')
+        return axios.get(`${baseUrl}}/users/logout`)
         .then(() => {
             sessionStorage.removeItem("sessionStorage");
-            axios.get('users/login')
         })
         .catch(e => console.error('Something went wrong', e.message))
     }
