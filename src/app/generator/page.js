@@ -1,11 +1,11 @@
-import Card from "@components/generator/card"
-import Navbar from "@components/generator/navbar"
+import Card from "@components/generator/card";
+import Navbar from "@components/generator/navbar";
 
-export default function () {
-  return(
+export default function Page() {
+  return (
     <>
       <Navbar />
       <Card />
     </>
-  )
+  );
 }

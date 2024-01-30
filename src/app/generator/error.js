@@ -1,7 +1,5 @@
-"use client"
+"use client";
 
-export default function( {error} ){
-  return(
-    <>{error}</>
-  )
+export default function Error({ error }) {
+  return <>{error}</>;
 }
