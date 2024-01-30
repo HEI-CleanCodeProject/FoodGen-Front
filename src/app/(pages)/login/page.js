@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-export default function Load() {
+export function LoginPage() {
   const {
     register,
     watch,
