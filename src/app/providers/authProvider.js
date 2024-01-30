@@ -18,5 +18,5 @@ export const authProvider = {
             sessionStorage.removeItem("sessionStorage");
         })
         .catch(e => console.error('Something went wrong', e.message))
-    }
+    },
 }

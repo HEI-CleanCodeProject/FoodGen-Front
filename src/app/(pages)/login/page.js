@@ -3,8 +3,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { authProvider } from "@/app/providers/authProvider";
+import { useRouter } from "next/navigation";
 
 export function LoginPage() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -17,7 +19,11 @@ export function LoginPage() {
   });
 
   const formSubmit = (data) => {
-    console.log(data);
+    authProvider.login(data).then((token)=>{
+      router.push("food/generator")
+    }).catch((e)=>{
+      console.log(e)
+    })
   };
   // TODO submit in endpoint ......
   return (
