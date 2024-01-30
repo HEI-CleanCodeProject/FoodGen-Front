@@ -29,9 +29,9 @@ export default function Register() {
 
   return (
     <>
-      <div class="flex items-center justify-center p-12">
+      <div class="flex items-center justify-center p-12 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-600 z-0">
         {/* <!-- Author: FormBold Team --> */}
-        <div class="mx-auto w-full max-w-[550px] bg-white">
+        <div class="mx-auto w-full max-w-[550px] bg-white shadow-md p-4 rounded-lg z-10">
           <form onSubmit={handleSubmit(formSubmit)}>
             <div class="mb-5">
               <label
@@ -125,7 +125,7 @@ export default function Register() {
               />
             </div>
             <div>
-              <button class="hover:shadow-form w-full rounded-md bg-[#00cc00] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+              <button class="hover:shadow-form w-full rounded-md bg-[#347854] py-3 px-8 text-center text-base font-semibold text-white outline-none">
                 Sing in
               </button>
             </div>
