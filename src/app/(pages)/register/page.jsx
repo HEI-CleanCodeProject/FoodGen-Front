@@ -129,7 +129,7 @@ export default function Register() {
             </div>
             <div>
               <button class="hover:shadow-form w-full rounded-md bg-[#347854] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                Sing in
+                Sing up
               </button>
             </div>
           </form>
