@@ -16,10 +16,10 @@ export default function Card ({foodName, foodDescription, foodId}) {
         </div>
         <div className={`p-1 h-2/6`}>
           <h4 className="py-2">{foodName}</h4>
-          <p className={`text-elipsis ${styles["card-text-size"]}`}>{foodDescription}</p>
+          <p className={`text-elipsis  ${styles["card-text-size"]}`}>{foodDescription}</p>
         </div>
         <div className="h-1/6 relative">
-          <button className="btn-app-1 absolute right-1 bottom-1" onClick={()=>{openModalAndDispatchData("oke")}}>more</button>
+          <button className="btn-app-1 absolute right-1 bottom-1" onClick={()=>{openModalAndDispatchData("oke")}}>Recipe</button>
         </div>
       </div>
     </div>

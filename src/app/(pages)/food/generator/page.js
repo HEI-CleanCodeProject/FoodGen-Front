@@ -9,24 +9,12 @@ export default function Generator () {
         <div>
           <h3 className="p-3">Recommended for you</h3>
           <div className="flex flex-wrap row">
-            <Card />
+            <Card foodDescription={'my descripion'} foodId={"zavatra"} foodName={"myfood"} />
           </div>
         </div>
         <hr className="bg-color-2 w-4/5 m-6"/>
         <div className="flex row flex-wrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card foodDescription={'my descripion'} foodId={"zavatra"} foodName={"myfood"}/>
         </div>
         <button className="btn-app-1 fixed right-4 bottom-4">
           <div className="flex flex-row items-center">
