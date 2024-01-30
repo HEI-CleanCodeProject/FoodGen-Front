@@ -1,6 +1,5 @@
-"use client"
 import { useState } from "react";
-import { UserIcon } from "../../../Icons";
+import { UserIcon } from "../../Icons";
 import styles from "./styles.module.css";
 import Modal from "../modal";
 import React from "react";
@@ -18,7 +17,11 @@ const [isOpen, setIsOpen ] = useState(false);
         </button>
         {isOpen && (
         <Modal isOpen={isOpen} handleClose={() => setIsOpen(!isOpen)}>
-          <h1>Modal content</h1>
+          <div className="flex items-center h-1/2">
+            <UserIcon/>
+            <p className="font-bold">UserName</p>
+          </div>
+          <p>Details about the user...</p>
         </Modal>
         )}
       </div>
