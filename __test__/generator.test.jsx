@@ -1,9 +1,8 @@
 import React from "react";
 import { describe, expect, it } from "@jest/globals";
-import Card from "../src/app/components/food/generator/card/";
 import { render, screen } from "@testing-library/react";
 import RootLayout from "@/app/layout";
-import  FoodRootLayout from "@/app/(pages)/food/layout";
+import FoodRootLayout from "@/app/(pages)/food/layout";
 import Generator from "@/app/(pages)/food/generator/page";
 
 describe("generator is correctly set", () => {

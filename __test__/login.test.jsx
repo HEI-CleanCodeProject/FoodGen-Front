@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Load from "../src/app/login/page";
+import Load from "../src/app/(pages)/login/page";
 import { describe, expect, it } from "@jest/globals";
 
 describe("verify if log in is installed", () => {
