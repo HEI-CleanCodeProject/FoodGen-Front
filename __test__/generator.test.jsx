@@ -3,8 +3,8 @@ import { describe, expect, it } from "@jest/globals";
 import Card from "../src/app/components/food/generator/card/";
 import { render, screen } from "@testing-library/react";
 import RootLayout from "@/app/layout";
-import  FoodRootLayout from "@/app/food/layout";
-import Generator from "@/app/food/generator/page";
+import  FoodRootLayout from "@/app/(pages)/food/layout";
+import Generator from "@/app/(pages)/food/generator/page";
 
 describe("generator is correctly set", () => {
   beforeAll(()=>{

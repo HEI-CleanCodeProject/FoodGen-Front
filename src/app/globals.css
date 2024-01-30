@@ -13,6 +13,7 @@
 
 body {
   color: var(--color-two);
+  overflow-y: scroll;
 }
 
 .bg-color-1{
