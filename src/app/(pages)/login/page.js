@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
+import { authProvider } from "@/app/providers/authProvider";
+import { useRouter } from "next/navigation";
 
 export function LoginPage() {
+  const router = useRouter();
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -16,9 +18,13 @@ export function LoginPage() {
     },
   });
 
-  const [payload, setPayload] = useState();
-  const formData = watch();
-  const formSubmit = (data) => {};
+  const formSubmit = (data) => {
+    authProvider.login(data).then(()=>{
+      router.push("food/generator")
+    }).catch((e)=>{
+      console.log(e)
+    })
+  };
   // TODO submit in endpoint ......
   return (
     <>
@@ -75,7 +81,7 @@ export function LoginPage() {
               </div>
               <div className="!mt-10">
                 <button
-                  type="button"
+                  type="submit"
                   className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-[#333] hover:bg-[#222] focus:outline-none"
                 >
                   Log in

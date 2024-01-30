@@ -1,22 +1,29 @@
-import axios, { Axios } from "axios"
-const baseURL= ""
-const authProvider = {
 
+import axios from "axios"
+
+const baseUrl = "";
+
+export const authProvider = {
     login: async ({email, password}) => {
-        await axios.post('{baseURL}/users/login', {email, password})
+        return axios.post(`${baseUrl}}/users/login`, {email, password})
         .then(response => {
-            sessionStorage.setItem("sessionToken", response.data);
+            sessionStorage.setItem("FoodGen-token", response.data);
             return response.data
         })
         .catch(e => console.error('Something went wrong', e.message))
     },
 
     logout: async () => {
-        await axios.get('{baseURL}/users/logout')
+
+        return axios.get(`${baseUrl}}/users/logout`)
         .then(() => {
-            sessionStorage.removeItem("sessionStorage");
-            axios.get('users/login')
+            sessionStorage.removeItem("FoodGen-token");
         })
         .catch(e => console.error('Something went wrong', e.message))
+    },
+    
+    verifyAuthentificationByToken: async () => {
+        //TODO: implement verification by token
+        return null
     }
 }

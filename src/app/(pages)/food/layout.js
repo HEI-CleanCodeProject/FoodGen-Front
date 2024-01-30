@@ -2,7 +2,9 @@ import React from "react";
 import "@/app/globals.css";
 import Navbar from "../../components/food/generator/navbar";
 import { FoodModal} from "../../components/food/generator/FoodModal";
-import ContextProvider from "../../contextProvider";
+import { FoodDetailContextProvider } from "@/app/context/foodDetailContextProvider";
+import { AuthentificationContextProvider } from "@/app/context/AuthentificationContextProvider";
+import IsAuthentificated from "@/app/components/authentification/isAuthentificated";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,12 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <>
-      <Navbar />
-      <ContextProvider>
-        <FoodModal />
-        {children}
-      </ContextProvider>
-    </>
+    <AuthentificationContextProvider>
+      <IsAuthentificated>
+        <Navbar />
+        <FoodDetailContextProvider>
+          <FoodModal />
+          {children}
+        </FoodDetailContextProvider>
+      </IsAuthentificated>
+    </AuthentificationContextProvider>
   );
 }
