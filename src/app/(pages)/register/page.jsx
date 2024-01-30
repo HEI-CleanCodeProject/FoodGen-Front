@@ -45,8 +45,9 @@ export default function Register() {
                 type={"text"}
                 id={"user name"}
                 placeholder={"User Name"}
-                required={true}
-                register={register}
+                {...register("username", {
+                  required: true,
+                })}
               />
             </div>
             <div class="mb-5">
@@ -61,8 +62,9 @@ export default function Register() {
                 type={"text"}
                 id={"first name"}
                 placeholder={"First Name"}
-                required={true}
-                register={register}
+                {...register("firstname", {
+                  required: true,
+                })}
               />
             </div>
             <div class="mb-5">
@@ -77,8 +79,9 @@ export default function Register() {
                 type={"text"}
                 id={"last name"}
                 placeholder={"Last Name"}
-                required={true}
-                register={register}
+                {...register("lastname", {
+                  required: true,
+                })}
               />
             </div>
             <div class="mb-5">
@@ -93,9 +96,15 @@ export default function Register() {
                 type={"email"}
                 id={"email"}
                 placeholder={"Enter your email"}
-                required={true}
-                register={register}
-                validate={isValidEmail}
+                {...register("email", {
+                  required: true,
+                  validate: {
+                    isValidEmail: (value) =>
+                      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                        value
+                      ) || "Email is not valid",
+                  },
+                })}
               />
             </div>
             <div class="mb-5">
@@ -110,8 +119,9 @@ export default function Register() {
                 type={"password"}
                 id={"password"}
                 placeholder={"Your Password"}
-                required={true}
-                register={register}
+                {...register("password", {
+                  required: true,
+                })}
               />
             </div>
             <div>
