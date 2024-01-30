@@ -21,6 +21,7 @@ export const authProvider = {
     },
     
     verifyAuthentificationByToken: async () => {
-        return axios
+        //TODO: implement verification by token
+        return null
     }
 }
