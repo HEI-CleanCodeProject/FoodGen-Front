@@ -1,5 +1,5 @@
 "use client"
-import { Context } from "@/app/contextProvider";
+import { Context } from "@/app/context/foodDetailContextProvider";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import React, { useContext } from "react";

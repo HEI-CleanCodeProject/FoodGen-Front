@@ -4,7 +4,7 @@ const { createContext, useState } = require("react");
 
 const context = createContext();
 
-const ContextProvider = ({children}) => {
+export const FoodDetailContextProvider = ({children}) => {
   const [data,setData] = useState({}); 
   const [isOpen,setIsOpen] = useState(false);
   const openModalAndDispatchData = (data) => {
@@ -28,5 +28,4 @@ const ContextProvider = ({children}) => {
   )
 }
 
-export const Context = context;
-export default ContextProvider;
+export const foodDetailContext = context;

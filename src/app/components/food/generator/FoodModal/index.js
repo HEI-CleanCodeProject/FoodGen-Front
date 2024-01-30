@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { useContext, useState } from "react";
-import { Context } from "@/app/contextProvider"; "@/app/contextProvider";
+import { Context } from "@/app/context/foodDetailContextProvider"; "@/app/contextProvider";
 import Modal from "../modal";
 
 export function FoodModal(){

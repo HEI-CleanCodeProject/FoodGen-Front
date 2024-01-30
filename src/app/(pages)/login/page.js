@@ -19,7 +19,7 @@ export function LoginPage() {
   });
 
   const formSubmit = (data) => {
-    authProvider.login(data).then((token)=>{
+    authProvider.login(data).then(()=>{
       router.push("food/generator")
     }).catch((e)=>{
       console.log(e)
