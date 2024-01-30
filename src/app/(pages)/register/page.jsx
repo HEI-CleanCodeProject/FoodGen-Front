@@ -29,7 +29,10 @@ export default function Register() {
 
   return (
     <>
-      <div class="flex items-center justify-center p-12 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-600 z-0">
+      <div
+        class="flex items-center justify-center p-12 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-600 
+      z-0"
+      >
         {/* <!-- Author: FormBold Team --> */}
         <div class="mx-auto w-full max-w-[550px] bg-white shadow-md p-4 rounded-lg z-10">
           <form onSubmit={handleSubmit(formSubmit)}>

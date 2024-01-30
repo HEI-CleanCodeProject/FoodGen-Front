@@ -22,6 +22,7 @@ export default function Load() {
   // TODO submit in endpoint ......
   return (
     <>
+      <time datetime="2016-10-25" suppressHydrationWarning />
       <div className="font-[sans-serif] bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-600 text-[#333]">
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
