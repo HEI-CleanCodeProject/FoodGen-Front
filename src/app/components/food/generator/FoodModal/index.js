@@ -9,7 +9,7 @@ export function FoodModal(){
   console.log(data)
   return (
     <Modal handleClose={closeModalAndClearData} isOpen={isOpen}>
-      <>my modal</>
+      <div className="w-[300px] h-[300px] bg-white">adsfdsf</div>
     </Modal>
   )
 }

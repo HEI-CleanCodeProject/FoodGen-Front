@@ -1,12 +1,11 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function Load() {
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -16,9 +15,9 @@ export default function Load() {
     },
   });
 
-  const [payload, setPayload] = useState();
-  const formData = watch();
-  const formSubmit = (data) => {};
+  const formSubmit = (data) => {
+    console.log(data);
+  };
   // TODO submit in endpoint ......
   return (
     <>
@@ -77,7 +76,7 @@ export default function Load() {
               </div>
               <div className="!mt-10">
                 <button
-                  type="button"
+                  type="submit"
                   className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-[#333] hover:bg-[#222] focus:outline-none"
                 >
                   Log in
