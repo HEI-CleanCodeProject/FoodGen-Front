@@ -1,28 +1,34 @@
 "use client"
+import axios from "axios"
 
 export const authProvider = {
   login: async ({username, password}) => {
     //TODO: implement proper provider
-    return await new Promise((resolve, reject)=>{
-      setTimeout(()=>{
-        if(username === "user" && password === "password"){
-            resolve({
-                token: "my token"
-            })
-        }else{
-            throw Error("username and password wrong");
-        }
-      }, 3000)
-    }).then((token)=>{
-        sessionStorage.setItem("FoodGenToken",token);
-        console.log("oke")
+    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/login",{
+        "username":username,"password":password
+    }).then((token) => {
+        console.log(token)
         return token;
-    }).catch((e)=>{
+    }).catch((e) => {
         console.error(e);
     })
-
   },
-  createUser: async ({}) => {
+
+  createUser: async (userToBeCreated) => {
     //TODO: implement proper createUser
+    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/users", [userToBeCreated]).then((userCreated) => {
+      return userCreated;
+    }).catch(()=>{
+      throw new Error("couldn't create user")
+    })
+  },
+
+  getUser: async () => {
+    const token = sessionStorage.getItem(process.env.SESSION);
+    return axios.get(process.env.NEXT_PUBLIC_BASE_URL,{
+      headers:{
+        Authorization:token
+      }
+    })
   }
 }

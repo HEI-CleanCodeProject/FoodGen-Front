@@ -1,15 +1,12 @@
+import axios from "axios"
+
 export const authProvider = {
   getUser: async () => {
-    return new Promise((resolve, reject)=>{
-      setTimeout(()=>{
-        resolve({
-            id:"id",
-            username:"myudjerName",
-            firstName:"Rio",
-            lastName:"Camero",
-            email:"test.email@gmail.com"
-        })
-      }, 3000)
+    const token = sessionStorage.getItem(process.env.SESSION);
+    return axios.get(process.env.NEXT_PUBLIC_BASE_URL,{
+      headers:{
+        Authorization:token
+      }
     })
   }
 }

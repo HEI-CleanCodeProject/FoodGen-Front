@@ -12,7 +12,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
-              <a href="javascript:void(0)">
+              <a href="#">
                 <img src="" alt="logo" className="w-52 mb-10 inline-block" />
               </a>
               <h2 className="text-4xl font-extrabold lg:leading-[50px] text-white">
