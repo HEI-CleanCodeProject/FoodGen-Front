@@ -49,6 +49,9 @@ body {
     @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-2;
     color: var(--color-one);
   }
+  .register-input {
+    @apply px-2 py-3 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm;
+  }
 }
 
 @layer utilities {
