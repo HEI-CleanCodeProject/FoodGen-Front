@@ -1,9 +1,9 @@
-import React from "react"
-import Card from "@/app/components/food/generator/card"
-import RegenerateIcon from "@/app/components/Icons/RegenerateIcon"
+import React from "react";
+import Card from "@/app/components/food/generator/card";
+import RegenerateIcon from "@/app/components/Icons/RegenerateIcon";
 
-export default function Generator () {
-  return(
+export default function Generator() {
+  return (
     <div>
       <div className="p-2">
         <div>
@@ -12,7 +12,7 @@ export default function Generator () {
             <Card />
           </div>
         </div>
-        <hr className="bg-color-2 w-4/5 m-6"/>
+        <hr className="bg-color-2 w-4/5 m-6" />
         <div className="flex row flex-wrap">
           <Card />
           <Card />
@@ -30,11 +30,11 @@ export default function Generator () {
         </div>
         <button className="btn-app-1 fixed right-4 bottom-4">
           <div className="flex flex-row items-center">
-            <RegenerateIcon className={"text-[--color-2]"}/>
+            <RegenerateIcon className={"text-[--color-2]"} />
             <span className="px-2">Regenerate</span>
           </div>
         </button>
       </div>
     </div>
-  )
+  );
 }

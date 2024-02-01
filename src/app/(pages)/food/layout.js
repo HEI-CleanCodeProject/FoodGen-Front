@@ -1,7 +1,7 @@
 import React from "react";
 import "@/app/globals.css";
 import Navbar from "../../components/food/generator/navbar";
-import { FoodModal} from "../../components/food/generator/FoodModal";
+import { FoodModal } from "../../components/food/generator/FoodModal";
 import ContextProvider from "../../contextProvider";
 
 export const metadata = {

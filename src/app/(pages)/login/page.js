@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -52,7 +52,7 @@ export default function LoginPage() {
                     validate: {
                       isValidEmail: (value) =>
                         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-                          value
+                          value,
                         ) || "Email is not valid",
                     },
                   })}

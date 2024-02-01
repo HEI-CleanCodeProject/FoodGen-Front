@@ -4,11 +4,11 @@
 
 :root {
   /* --color-one:#FBD757; */
-  --color-one:#6ae46a;
-  --color-two:#545454;
+  --color-one: #6ae46a;
+  --color-two: #545454;
   /* --color-two:#1e172f; */
-  --color-grey:#cbcbcb4e;
-  --color-three:#f7ca63;
+  --color-grey: #cbcbcb4e;
+  --color-three: #f7ca63;
 }
 
 body {
@@ -16,36 +16,36 @@ body {
   overflow-y: scroll;
 }
 
-.bg-color-1{
+.bg-color-1 {
   background-color: var(--color-one);
 }
 
-.bg-color-3{
+.bg-color-3 {
   background-color: var(--color-three);
 }
 
-.bg-color-2{
+.bg-color-2 {
   background-color: var(--color-two);
 }
 
-.bg-color-grey{
-  background-color: var(--color-grey)
+.bg-color-grey {
+  background-color: var(--color-grey);
 }
 
-.color-1{
+.color-1 {
   color: var(--color-one);
 }
 
-.color-2{
+.color-2 {
   color: var(--color-two);
 }
 
-@layer components{
-  .btn-app-1{
+@layer components {
+  .btn-app-1 {
     @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-3;
     color: var(--color-two);
   }
-  .btn-app-2{
+  .btn-app-2 {
     @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-2;
     color: var(--color-one);
   }
