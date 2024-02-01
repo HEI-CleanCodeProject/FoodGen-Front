@@ -1,5 +1,5 @@
 import { redirect } from "next/dist/server/api-utils";
-import { authProvider} from "../provider/authProvider";
+import { authProvider} from "../provider/authProvider/serverSide";
 import React from "react";
 
 export default async function IsAuthenticated({children}){

@@ -1,25 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
+import { authProvider } from "@/app/provider/authProvider/clientSide";
+import { useRouter } from "next/navigation";
 
-export default function LoginPage() {
-  const {
-    register,
-    watch,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
-
-  const [payload, setPayload] = useState();
-  const formData = watch();
-  const formSubmit = (data) => {};
-  // TODO submit in endpoint ......
+function LoginPageUI({register, handleSubmit, formSubmit}) {
   return (
     <>
       <div className="font-[sans-serif] bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-[#333]">
@@ -77,7 +63,7 @@ export default function LoginPage() {
               </div>
               <div className="!mt-10">
                 <button
-                  type="button"
+                  type="submit"
                   className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-[#333] hover:bg-[#222] focus:outline-none"
                 >
                   Log in
@@ -89,4 +75,36 @@ export default function LoginPage() {
       </div>
     </>
   );
+}
+
+// login page take on a props of type Component that have as props: 
+function LoginPageLogique({UI}) {
+  const {
+    register,
+    handleSubmit,
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+  const router = useRouter();
+
+  const formSubmit = (data) => {
+    console.log(data)
+    authProvider.login({data}).then(()=>{
+      router.push("/food/generator")
+    }).catch((e)=>{
+      console.error(e)
+    })
+  };
+  // TODO submit in endpoint ......
+  return (
+    <UI register={register} handleSubmit={handleSubmit} formSubmit={formSubmit} />
+  )
+}
+
+
+export default function LoginPage(){
+  return <LoginPageLogique UI={LoginPageUI} />
 }
