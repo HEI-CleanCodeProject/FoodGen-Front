@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { authProvider } from "@/app/providers/authProvider";
 import { useRouter } from "next/navigation";
 
-export function LoginPage() {
+export default function LoginPage() {
   const router = useRouter();
   const {
     register,
@@ -19,11 +19,14 @@ export function LoginPage() {
   });
 
   const formSubmit = (data) => {
-    authProvider.login(data).then(()=>{
-      router.push("food/generator")
-    }).catch((e)=>{
-      console.log(e)
-    })
+    authProvider
+      .login(data)
+      .then(() => {
+        router.push("food/generator");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
   // TODO submit in endpoint ......
   return (
@@ -32,7 +35,6 @@ export function LoginPage() {
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
-        
               <h2 className="text-4xl font-extrabold lg:leading-[50px] text-white">
                 Seamless Login for Exclusive Access
               </h2>
