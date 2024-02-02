@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UserIcon } from "../../../Icons";
+import { UserIcon } from "../../../icons";
 import styles from "./styles.module.css";
 import Modal from "../modal";
 import React from "react";

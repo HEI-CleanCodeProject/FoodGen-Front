@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "@/app/components/food/generator/card";
-import RegenerateIcon from "@/app/components/Icons/RegenerateIcon";
+import RegenerateIcon from "@/app/components/icons/RegenerateIcon";
 
 export default function Generator() {
   return (
