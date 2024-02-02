@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext, useEffect } from "react";
 import { authProvider } from "@/app/providers/authProvider";
 import { AuthentificationContext } from "@/app/context/AuthentificationContextProvider";
