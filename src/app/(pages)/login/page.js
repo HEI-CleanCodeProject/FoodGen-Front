@@ -8,22 +8,22 @@ import CarouselComponent from "@/app/components/carousel/Carousel";
 import "./Login.css"
 
 function LoginPageUI({register, handleSubmit, formSubmit}) {
+  /*from-emerald-900*/
   return (
     <>
-       <div className="font-[sans-serif] bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-600 text-[#333]">
+     <div className="_mainBody">
+      <div className=" w-full "></div>
+       <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
-              <a href="#">
-                <CarouselComponent/>
-              </a>
-           
+                <CarouselComponent/>           
             </div>
             <form
               onSubmit={handleSubmit(formSubmit)}
-              className="bg-white rounded-xl px-6 py-8 space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full"
+              className="_form_bg rounded-xl px-6 py-8 space-y-8 max-w-md md:ml-auto max-md:mx-auto w-full"
             >
-              <h3 className="text-3xl font-extrabold mb-12 max-md:text-center">
+              <h3 className="_loginTitle">
                 Log in
               </h3>
               <div>
@@ -41,7 +41,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   type="email"
                   autoComplete="email"
                   required
-                  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#333]"
+                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                   placeholder="Email address"
                 />
               </div>
@@ -52,14 +52,14 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#333]"
+                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                   placeholder="Password"
                 />
               </div>
               <div className="!mt-10">
                 <button
                   type="submit"
-                  className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-[#333] hover:bg-[#222] focus:outline-none"
+                  className=" shadow-xl py-2.5 px-4 text-sm focus:outline-none _btn"
                 >
                   Log in
                 </button>
@@ -67,6 +67,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

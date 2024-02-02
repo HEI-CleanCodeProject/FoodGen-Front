@@ -3,6 +3,8 @@ import React from "react"
 import { authProvider } from "@/app/provider/authProvider/clientSide"
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/navigation"
+import CarouselComponent from "@/app/components/carousel/Carousel";
+import "./register.css"
 
 export default function Register() {
   return <RegisterLogique UI={RegisterSimpleDesignUi} />
@@ -37,13 +39,22 @@ function RegisterLogique({ UI }) {
 
 function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
   return (
-    <div class="bg-gray-100 flex h-screen items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div class="w-full max-w-md space-y-8">
-        <div class="bg-white shadow-md rounded-md p-6">
+     
+    <div className="">
+      <div className=" w-full "></div>
+    
+       <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
+        <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
+          <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
+            <div className="max-md:text-center">
+                <CarouselComponent/>           
+            </div>
 
-          <img class="mx-auto h-12 w-auto" src="https://www.svgrepo.com/show/499664/user-happy.svg" alt="" />
+            <div className="_registering shadow-md p-6">
 
-          <h2 class="my-3 text-center text-3xl font-bold tracking-tight text-gray-900">
+          <img className="mx-auto h-14 w-auto" src="https://www.svgrepo.com/show/499664/user-happy.svg" alt="ha^^y" />
+
+          <h2 className="my-3 text-center text-3xl font-bold tracking-tight">
             Sign up for an account
           </h2>
 
@@ -51,8 +62,8 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           <form class="space-y-6" method="POST">
 
             <div>
-              <label class="block text-sm font-medium text-gray-700">Firstname</label>
-              <div class="mt-1">
+              <label class="block font-medium ">Firstname</label>
+              <div class="mt-1 _inputList">
               <input
                 {...register("first_name", { required: true })}
                 name="first_name"
@@ -60,13 +71,13 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 autoComplete="current-first_name"
                 required
                 className="register-input"
-                placeholder="firstname"
+                placeholder="Firstname"
               />
               </div>
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700">Lastname</label>
+              <label class="block font-medium ">Lastname</label>
               <div class="mt-1">
                 <input
                   {...register("last_name", { required: true })}
@@ -75,12 +86,12 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   autoComplete="current-last_name"
                   required
                   className="register-input"
-                  placeholder="lastname"
+                  placeholder="Lastname"
                 />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Username</label>
+              <label class="block font-medium ">Username</label>
               <div class="mt-1">
                 <input
                   {...register("username", { required: true })}
@@ -89,12 +100,12 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   autoComplete="current-username"
                   required
                   className="register-input"
-                  placeholder="@username"
+                  placeholder="Username"
                 />
               </div>
             </div>
             <div>
-              <label for="password" class="block text-sm font-medium text-gray-700">Email</label>
+              <label for="password" class="block font-medium ">Email</label>
               <div class="mt-1">
               <input
                 {...register("email", {
@@ -117,7 +128,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700">Password</label>
+              <label class="block  font-medium ">Password</label>
               <div class="mt-1">
               <input
                 {...register("password", { required: true })}
@@ -133,11 +144,13 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             <div>
     
               <button type="submit"
-                class="flex w-full justify-center rounded-md border border-transparent bg-sky-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2">Register
+                class=" shadow-xl py-2.5 px-4 text-sm focus:outline-none _btn">Register
                 Account
               </button>
             </div>
           </form>
+        </div>
+          </div>
         </div>
       </div>
     </div>
