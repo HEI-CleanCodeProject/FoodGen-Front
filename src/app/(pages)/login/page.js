@@ -10,10 +10,10 @@ import "./Login.css"
 function LoginPageUI({register, handleSubmit, formSubmit}) {
   return (
     <>
-      <div className="font-[sans-serif] bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-[#333]">
+        <div className="font-[sans-serif] bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-600 text-[#333]">
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
-            <div className="max-md:text-center _fst">
+            <div className="max-md:text-center">
               <a href="#">
                 <CarouselComponent/>
               </a>
