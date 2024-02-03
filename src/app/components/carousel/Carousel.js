@@ -2,30 +2,24 @@ import React from "react";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./carousel.css";
+import Image from 'next/image';
 
 const CarouselComponent = () => {
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
-      <div class="overlay"></div>
-    
-       { /*  <img src="/images/Photo.png" alt="" class="photo"/>
-       <img src="/images/1.png" alt="Image 1" className="carousel-image" />
-       */}
+        <div className="overlay"></div>
         <Carousel autoPlay infiniteLoop className="">
           <div>
-            <img src="/images/1.png" alt="Image 1" className="carousel-image" />
+            <Image src="/images/1.png" alt="Image 1" className="carousel-image" width={800} height={600} />
           </div>
           <div>
-            <img src="/images/2.png" alt="Image 2" className="carousel-image" />
+            <Image src="/images/2.png" alt="Image 2" className="carousel-image" width={800} height={600} />
           </div>
           <div>
-            <img src="/images/3.png" alt="Image 3" className="carousel-image" />
+            <Image src="/images/3.png" alt="Image 3" className="carousel-image" width={800} height={600} />
           </div>
         </Carousel>
-        
-                    
-
       </div>
     </div>
   );

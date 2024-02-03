@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import ReactPortal from "./ReactPortal";
 import React from "react";
 
-export default function ({ children, isOpen, handleClose }) {
+export default function Modal ({ children, isOpen, handleClose }) {
   //close modal on escape key press
   useEffect(() => {
     const closeOnEscape = (e) => (e.key === "Escape" ? handleClose() : null);

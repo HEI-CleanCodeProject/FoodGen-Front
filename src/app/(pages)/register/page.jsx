@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import { useRouter } from "next/navigation"
 import CarouselComponent from "@/app/components/carousel/Carousel";
 import "./register.css"
+import Image from "next/image"
 
 export default function Register() {
   return <RegisterLogique UI={RegisterSimpleDesignUi} />
@@ -52,7 +53,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
 
             <div className="_registering shadow-md p-6">
 
-          <img className="mx-auto h-14 w-auto" src="https://www.svgrepo.com/show/499664/user-happy.svg" alt="ha^^y" />
+            <Image className="mx-auto" src="https://www.svgrepo.com/show/499664/user-happy.svg" alt="happy" width={56} height={56} />
 
           <h2 className="my-3 text-center text-3xl font-bold tracking-tight">
             Sign up for an account
