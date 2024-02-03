@@ -1,68 +1,82 @@
-"use client";
-import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
+"use client"
+import React from 'react';
 
-export default function Search() {
-  const [searchValue, setSearchValue] = useState("");
+import { useState } from 'react';
 
-  const handleChange = (e) => {
-    setSearchValue(e.target.value);
-  };
+export default function Home() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [selectedNames, setSelectedNames] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      // Simulate a request to a mock API (replace this with your actual logic)
-      const response = await fetch(
-        `https://api.example.com/search?query=${searchValue}`
+  const data = [
+    "John",
+    "Jane",
+    "Michael",
+    "Sarah",
+    "David"
+  ];
+
+  const handleSearch = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+
+    if (term === '') {
+      setSuggestions([]);
+    } else {
+      const filteredSuggestions = data.filter((nom) =>
+        nom.toLowerCase().includes(term.toLowerCase())
       );
-      const data = await response.json();
-
-      // Display the search results in the console
-      console.log("Search results:", data);
-    } catch (error) {
-      console.error("Error during search:", error);
+      setSuggestions(filteredSuggestions);
     }
   };
 
-  const handleSearch = () => {
-    fetchData();
+  const addToCart = (name) => {
+    setSelectedNames([...selectedNames, name]);
+  };
+
+  const removeFromCart = (name) => {
+    const updatedNames = selectedNames.filter((selectedName) => selectedName !== name);
+    setSelectedNames(updatedNames);
   };
 
   return (
-    <div class="pt-2 relative mx-auto text-gray-600">
+    <div className="max-w-md mx-auto p-4 relative">
       <input
-        class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-        type="search"
-        name="search"
-        placeholder="Search"
-        id="searchInput"
-        value={searchValue}
-        onChange={handleChange}
-        className="bg-[transparent] outline-none border-none w-full py-3 pl-2 pr-3"
+        type="text"
+        placeholder="Rechercher un nom..."
+        value={searchTerm}
+        onChange={handleSearch}
+        className="w-full p-2 mb-4 border border-gray-300 rounded"
       />
-      <button
-        type="submit"
-        className="absolute right-0 top-0 mt-5 mr-4"
-        onClick={handleSearch}
-      >
-        <svg
-          className="text-gray-600 h-4 w-4 fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          id="Capa_1"
-          x="0px"
-          y="0px"
-          viewBox="0 0 56.966 56.966"
-          style={{
-            enableBackground: "new 0 0 56.966 56.966",
-            marginRight: "0.4em",
-          }}
-          width="512px"
-          height="512px"
-        >
-          <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-        </svg>
-      </button>
+      {suggestions.length > 0 && (
+        <ul className="absolute left-0 right-0 z-10 bg-white border border-gray-300 rounded">
+          {suggestions.map((suggestion, index) => (
+            <li key={index} className="flex justify-between items-center py-2 px-4">
+              <span>{suggestion}</span>
+              <button
+                onClick={() => addToCart(suggestion)}
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              >
+                Ajouter au panier
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <h2 className="mt-4 mb-2 text-xl font-bold text-white">Panier :</h2>
+      <ul>
+        {selectedNames.map((name, index) => (
+          <li key={index} className="flex justify-between items-center py-2">
+            <span>{name}</span>
+            <button
+              onClick={() => removeFromCart(name)}
+              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+            >
+              Supprimer
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
