@@ -4,7 +4,7 @@ import Link from 'next/link';
 const HomePage = () => {
   return (
     <div>
-      <nav className='_NavLink' >
+      <nav className='_NavLink text-white' >
         <Link href="/">
           Home
         </Link>
