@@ -21,7 +21,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
             </div>
             <form
               onSubmit={handleSubmit(formSubmit)}
-              className="_form_bg rounded-xl px-6 py-8 space-y-8 max-w-md md:ml-auto max-md:mx-auto w-full"
+              className="_form_bg rounded-xl px-6 py-8 space-y-12 max-w-md md:ml-auto max-md:mx-auto w-full"
             >
               <h3 className="_loginTitle">
                 Log in

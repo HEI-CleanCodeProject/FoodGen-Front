@@ -4,15 +4,18 @@ import Link from 'next/link';
 const HomePage = () => {
   return (
     <div>
-      <h1>Home Page</h1>
-      <nav>
+      <nav className='_NavLink' >
         <Link href="/">
           Home
         </Link>
         <Link href="/login">
           Login
         </Link>
+        <Link href="/register">
+          Register
+        </Link>
       </nav>
+      <h1>Home Page</h1>
     </div>
   );
 };
