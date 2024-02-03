@@ -79,7 +79,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
 
             <div>
               <label class="block font-medium ">Lastname</label>
-              <div class="mt-1">
+              <div class="mt-1 _inputList">
                 <input
                   {...register("last_name", { required: true })}
                   name="last_name"
@@ -93,7 +93,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
             <div>
               <label class="block font-medium ">Username</label>
-              <div class="mt-1">
+              <div class="mt-1 _inputList">
                 <input
                   {...register("username", { required: true })}
                   name="username"
@@ -107,7 +107,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
             <div>
               <label for="password" class="block font-medium ">Email</label>
-              <div class="mt-1">
+              <div class="mt-1 _inputList">
               <input
                 {...register("email", {
                   required: true,
@@ -130,7 +130,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
 
             <div>
               <label class="block  font-medium ">Password</label>
-              <div class="mt-1">
+              <div class="mt-1 _inputList">
               <input
                 {...register("password", { required: true })}
                 name="password"
