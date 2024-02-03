@@ -29,7 +29,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
               <div>
                 <input
                   {...register("email", {
-                    required: true,
+                    required: true, 
                     validate: {
                       isValidEmail: (value) =>
                         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
