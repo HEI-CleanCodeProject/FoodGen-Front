@@ -41,7 +41,7 @@ function RegisterLogique({ UI }) {
 function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
   return (
      
-    <div className="">
+    <div className="main_bg">
       <div className=" w-full "></div>
     
        <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">

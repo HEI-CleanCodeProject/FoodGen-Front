@@ -63,3 +63,15 @@ body {
     text-wrap: balance;
   }
 }
+.main_bg{
+  background-color: rgba(46, 87, 37, 0.474);
+}
+
+._NavLink{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+._link{
+padding: 0  30px;
+}
