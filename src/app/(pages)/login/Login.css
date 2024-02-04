@@ -12,14 +12,11 @@
     font-size: 16px;
 }
 ._inputStyle::placeholder{
-    color: rgba(240, 248, 255, 0.73);
+    color: rgba(240, 248, 255, 0.413);
     font-family: cursive;
     font-weight: 50;
 }
-._inputStyle::-webkit-input-placeholder {
-    caret-color: white;
-    color: aliceblue;
-  }
+
 ._btn:hover{
     color: aliceblue;
 }  

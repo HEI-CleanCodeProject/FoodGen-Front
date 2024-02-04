@@ -71,7 +71,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 type="text"
                 autoComplete="current-first_name"
                 required
-                className="register-input"
+                className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                 placeholder="Firstname"
               />
               </div>
@@ -86,7 +86,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   type="text"
                   autoComplete="current-last_name"
                   required
-                  className="register-input"
+                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                   placeholder="Lastname"
                 />
               </div>
@@ -100,13 +100,13 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   type="text"
                   autoComplete="current-username"
                   required
-                  className="register-input"
+                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                   placeholder="Username"
                 />
               </div>
             </div>
             <div>
-              <label for="password" className="block font-medium ">Email</label>
+              <label htmlForfor="password" className="block font-medium ">Email</label>
               <div className="mt-1 _inputList">
               <input
                 {...register("email", {
@@ -122,7 +122,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 type="email"
                 autoComplete="email"
                 required
-                className="register-input"
+                className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                 placeholder="Email address"
               />
               </div>
@@ -137,7 +137,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="register-input"
+                className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
                 placeholder="Password"
               />
               </div>
