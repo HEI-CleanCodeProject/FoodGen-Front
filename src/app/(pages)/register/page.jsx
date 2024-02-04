@@ -60,11 +60,11 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           </h2>
 
 
-          <form class="space-y-6" method="POST">
+          <form className="space-y-6" method="POST">
 
             <div>
-              <label class="block font-medium ">Firstname</label>
-              <div class="mt-1 _inputList">
+              <label className="block font-medium ">Firstname</label>
+              <div className="mt-1 _inputList">
               <input
                 {...register("first_name", { required: true })}
                 name="first_name"
@@ -78,8 +78,8 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
 
             <div>
-              <label class="block font-medium ">Lastname</label>
-              <div class="mt-1 _inputList">
+              <label className="block font-medium ">Lastname</label>
+              <div className="mt-1 _inputList">
                 <input
                   {...register("last_name", { required: true })}
                   name="last_name"
@@ -92,8 +92,8 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
               </div>
             </div>
             <div>
-              <label class="block font-medium ">Username</label>
-              <div class="mt-1 _inputList">
+              <label className="block font-medium ">Username</label>
+              <div className="mt-1 _inputList">
                 <input
                   {...register("username", { required: true })}
                   name="username"
@@ -106,8 +106,8 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
               </div>
             </div>
             <div>
-              <label for="password" class="block font-medium ">Email</label>
-              <div class="mt-1 _inputList">
+              <label for="password" className="block font-medium ">Email</label>
+              <div className="mt-1 _inputList">
               <input
                 {...register("email", {
                   required: true,
@@ -129,8 +129,8 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
 
             <div>
-              <label class="block  font-medium ">Password</label>
-              <div class="mt-1 _inputList">
+              <label className="block  font-medium ">Password</label>
+              <div className="mt-1 _inputList">
               <input
                 {...register("password", { required: true })}
                 name="password"
@@ -145,7 +145,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             <div>
     
               <button type="submit"
-                class=" shadow-xl py-2.5 px-4 text-sm focus:outline-none _btn">Register
+                className=" shadow-xl py-2.5 px-4 text-sm focus:outline-none _btn">Register
                 Account
               </button>
             </div>
