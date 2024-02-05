@@ -41,8 +41,8 @@ function RegisterLogique({ UI }) {
 function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
   return (
      
-    <div className="">
-      <div className=" w-full "></div>
+    <div>
+      <div className="w-full"></div>
     
        <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
@@ -60,7 +60,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           </h2>
 
 
-          <form class="space-y-6" method="POST">
+          <form class="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
 
             <div>
               <label class="block font-medium ">Firstname</label>
