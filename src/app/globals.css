@@ -75,3 +75,10 @@ body {
 ._link{
 padding: 0  30px;
 }
+.left ,.right{
+  border: solid 1px;
+}
+._body{
+  display: flex;
+  flex-direction: row;
+}
