@@ -25,7 +25,7 @@ export default function Modal ({ children, isOpen, handleClose }) {
 
   return (
     <ReactPortal wrapperId="modal-wrapper">
-      <>
+      <div data-testId="modal-rendered">
         <div className="fixed top-0 left-0 w-screen h-screen z-40 bg-color-2 backdrop-blur-sm opacity-60" />
         <div className="fixed rounded-xl justify-center flex flex-col min-w-fit box-border overflow-hidden p-5 bg-[--color-white] inset-y-32 inset-x-12 z-50 opacity-100">
           <button className="absolute top-4 right-4" onClick={handleClose}>
@@ -33,7 +33,7 @@ export default function Modal ({ children, isOpen, handleClose }) {
           </button>
           <div className="box-border h-5/6">{children}</div>
         </div>
-      </>
+      </div>
     </ReactPortal>
   );
 }

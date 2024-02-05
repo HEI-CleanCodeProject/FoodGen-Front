@@ -17,12 +17,12 @@ export function UserInformationAccess({user}) {
       ></div>
       <div className="flex row color-1 p-1 h-full relative justify-end">
         <label className="self-center text-lg text-white">{user.username}</label>
-        <button className="px-4 rounded-full" onClick={() => setIsOpen(true)}>
+        <button data-testId="user-informations-btn" className="px-4 rounded-full" onClick={() => setIsOpen(true)}>
           <UserIcon />
         </button>
         {isOpen && (
           <Modal isOpen={isOpen} handleClose={() => setIsOpen(!isOpen)}>
-            <div className="flex flex-row shadow-inner bg-white rounded-lg my-3">
+            <div className="flex flex-row shadow-inner bg-white rounded-lg my-3" data-testId="user-informations" >
               <UserIcon className="w-[160px] h-[160px]"/>
               <div className="flex flex-col p-6">
                 <p className="font-bold py-2 text-xl">{user.username}</p>

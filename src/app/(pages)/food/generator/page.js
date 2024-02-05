@@ -4,7 +4,7 @@ import RegenerateIcon from "@/app/components/icons/RegenerateIcon";
 
 export default function Generator() {
   return (
-    <div>
+    <div data-testId="generator" >
       <div className="p-2">
         <div>
           <h3 className="p-3">Recommended for you</h3>
