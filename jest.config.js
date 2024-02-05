@@ -32,7 +32,9 @@ const config = {
     '!**/error.{jsx,js}',
     '!**/loading.{jsx,js}',
     '!**/.next/**',
-    '!__mocks__/**'
+    '!__mocks__/**',
+    "!__test__/**",
+    "!src/app/components/Icons/**"
   ],
 
   // The directory where Jest should output its coverage files
