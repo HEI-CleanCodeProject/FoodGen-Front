@@ -5,9 +5,10 @@
 :root {
   /* --color-one:#FBD757; */
   --color-one: #6ae46a;
-  --color-two: #545454;
+  --color-two: #212121;
   /* --color-two:#1e172f; */
   --color-grey: #cbcbcb4e;
+  --color-white: rgb(221, 221, 221);
   --color-three: #f7ca63;
 }
 
@@ -51,7 +52,7 @@ body {
   }
   .btn-app-2 {
     @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-2;
-    color: var(--color-one);
+    color: var(--color-white);
   }
   .register-input {
     @apply px-2 py-3 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm;

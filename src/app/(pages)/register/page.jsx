@@ -42,8 +42,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
   return (
      
     <div className="main_bg">
-      <div className=" w-full "></div>
-    
+      <div className=" w-full "></div>    
        <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
         <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
@@ -58,10 +57,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           <h2 className="my-3 text-center text-3xl font-bold tracking-tight">
             Sign up for an account
           </h2>
-
-
-          <form className="space-y-6" method="POST">
-
+          <form class="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
             <div>
               <label className="block font-medium ">Firstname</label>
               <div className="mt-1 _inputList">

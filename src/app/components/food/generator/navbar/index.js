@@ -3,7 +3,7 @@ import { UserInformationAccess } from "./UserInformationAccess";
 import { Logo } from "./Logo";
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar({user}) {
   return (
     <header data-testid="my-navbar" className="sticky top-0 w-full z-10">
       <nav
@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="w-5/6">
           <Logo />
         </div>
-        <UserInformationAccess />
+        <UserInformationAccess user={user}/>
       </nav>
     </header>
   );

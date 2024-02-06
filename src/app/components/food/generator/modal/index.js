@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import ReactPortal from "./ReactPortal";
 import React from "react";
+import CrossIcon from "@/app/components/Icons/CrossIcon";
 
 export default function Modal ({ children, isOpen, handleClose }) {
   //close modal on escape key press
@@ -24,15 +25,15 @@ export default function Modal ({ children, isOpen, handleClose }) {
 
   return (
     <ReactPortal wrapperId="modal-wrapper">
-      <>
-        <div className="fixed top-0 left-0 w-screen h-screen z-40 bg-color-2 opacity-50" />
-        <div className="fixed rounded justify-center flex flex-col min-w-fit box-border overflow-hidden p-5 bg-white inset-y-32 inset-x-12 z-50 opacity-100">
-          <div className="box-border h-5/6">{children}</div>
-          <button className="btn-app-2" onClick={handleClose}>
-            Close
+      <div data-testId="modal-rendered">
+        <div className="fixed top-0 left-0 w-screen h-screen z-40 bg-color-2 backdrop-blur-sm opacity-60" />
+        <div className="fixed rounded-xl justify-center flex flex-col min-w-fit box-border overflow-hidden p-5 bg-[--color-white] inset-y-32 inset-x-12 z-50 opacity-100">
+          <button className="absolute top-4 right-4" onClick={handleClose}>
+            <CrossIcon />
           </button>
+          <div className="box-border h-5/6">{children}</div>
         </div>
-      </>
+      </div>
     </ReactPortal>
   );
 }
