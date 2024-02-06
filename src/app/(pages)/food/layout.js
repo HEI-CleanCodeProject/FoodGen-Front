@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <FoodModal />
         {children}
       </ContextProvider>
-    </IsAuthenticated>
+      </IsAuthenticated>
     </>
   );
 }

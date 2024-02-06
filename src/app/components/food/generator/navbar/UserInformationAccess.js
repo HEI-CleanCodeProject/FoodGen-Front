@@ -7,7 +7,8 @@ import LogoutIcon from "@/app/components/Icons/LogoutIcon";
 import UserActionsButton from "./UserActionsButton";
 import EditIcon from "@/app/components/Icons/EditIcon";
 
-export function UserInformationAccess({user}) {
+export function UserInformationAccess(props) {
+  const {user} = props;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,7 +18,7 @@ export function UserInformationAccess({user}) {
       ></div>
       <div className="flex row color-1 p-1 h-full relative justify-end">
         <label className="self-center text-lg text-white">{user.username}</label>
-        <button data-testId="user-informations-btn" className="px-4 rounded-full" onClick={() => setIsOpen(true)}>
+        <button className="px-4 rounded-full" onClick={() => setIsOpen(true)}>
           <UserIcon />
         </button>
         {isOpen && (
@@ -25,9 +26,9 @@ export function UserInformationAccess({user}) {
             <div className="flex flex-row shadow-inner bg-white rounded-lg my-3" data-testId="user-informations" >
               <UserIcon className="w-[160px] h-[160px]"/>
               <div className="flex flex-col p-6">
-                <p className="font-bold py-2 text-xl">{user.username}</p>
-                <p><span className="font-bold">Fullname : </span>{`${user.firstname} ${user.lastname}`}</p>
-                <p><span className="font-bold">Email :</span> {user.email}</p>
+                <p className="font-bold py-2 text-xl">{props.username}</p>
+                <p><span className="font-bold">Fullname : </span>{`${props.firstname} ${props.lastname}`}</p>
+                <p><span className="font-bold">Email :</span> {props.email}</p>
               </div>
               <div>
                 
@@ -35,7 +36,7 @@ export function UserInformationAccess({user}) {
             </div>
             <div className="flex flex-row shadow-inner flex-wrap bg-white p-2 rounded-lg h-3/5 overflow-auto overflow-x-hidden">
               <UserActionsButton label={"Edit profile"} Icon={EditIcon} />
-              <UserActionsButton label={"log out"} Icon={LogoutIcon} />
+              <UserActionsButton label={"log out"} Icon={LogoutIcon} onClick={()=>{}} />
             </div>
           </Modal>
         )}

@@ -7,12 +7,12 @@ export default async function IsAuthenticated({children}){
   // const user = await authProvider.whoami().catch(()=>{
   //  redirect("/login")
   // });
-  const user = {
+/*  const user = {
     username:"hidden-machina",
     firstname:"cocorico",
     lastname:"banzai",
     email:"test.test@gmail.com"
-  }
+  }*/
     
   return(
     <>
