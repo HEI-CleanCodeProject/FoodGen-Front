@@ -20,6 +20,7 @@ export const authProvider = {
       throw e;
     })
   },
+
   createUser: async (userToBeCreated) => {
     //TODO: implement proper createUser
     return app.post("/users/signup", {
@@ -32,4 +33,18 @@ export const authProvider = {
       throw e;
     })
   },
+
+  whoami: async () => {
+    const token = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
+
+    return app.get("/users/whoami",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((user)=>{
+      return user.data;
+    }).catch((e)=>{
+      throw e;
+    })
+  }
 }
