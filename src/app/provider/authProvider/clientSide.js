@@ -51,7 +51,7 @@ export const authProvider = {
   },
   
   getMeals: async (token) => {
-    return {
+    return [{
       "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
       "name": "Pizza",
       "region": {
@@ -65,7 +65,7 @@ export const authProvider = {
       },
       "image": "string",
       "download": 10
-    }
+    }]
     // return app.get("/meals",{
     //   headers:{
     //     Authorization:"Bearer "+token

@@ -1,10 +1,12 @@
 "use client";
+
 import { Context } from "@/app/contextProvider";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import React, { useContext } from "react";
+import { DownloadIcon } from "@/app/components/Icons";
 
-export default function Card({meals}) {
+export default function Card({meal}) {
   const { openModalAndDispatchData } = useContext(Context);
 
   return (
@@ -14,23 +16,24 @@ export default function Card({meals}) {
     >
       <div className="w-full h-full">
         <div className="bg-color-2 h-3/6 w-full shadow-xl rounded">
-          <Image alt="my image" src={meals.imgage} className="w-full h-full" />
+          <Image alt="my image" src={meal.imgage} className="w-full h-full" />
         </div>
         <div className={`p-1 h-2/6`}>
-          <h4 className="py-2">{meals.name}</h4>
-          <p className={`text-elipsis ${styles["card-text-size"]}`}>
-            lorem upsum dolor shit hap adsf asdfjafd asd adsf adsf asd fa sdf
-            adsf ad
-          </p>
+          <h4 className="py-1 text-2xl font-medium">{meal.name}</h4>
+          <h4 className="text-md">From : {meal.region.name}</h4>
+          <div className="absolute items-center flex flex-row bottom-3 left-3">
+            <DownloadIcon />
+            <span className="text-lg">{meal.download}</span>
+          </div>
         </div>
         <div className="h-1/6 relative">
           <button
             className="btn-app-1 absolute right-1 bottom-1"
             onClick={() => {
-              openModalAndDispatchData(meals);
+              openModalAndDispatchData(meal);
             }}
           >
-            more
+            Recipe
           </button>
         </div>
       </div>

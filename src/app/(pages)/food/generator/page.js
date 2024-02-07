@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import RegenerateIcon from "@/app/components/icons/RegenerateIcon";
 import { ListMeals } from "@/app/components/food/generator/listMeals";
