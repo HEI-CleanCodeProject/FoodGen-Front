@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./food/generator/navbar";
+import { authProvider } from "../provider/authProvider/serverSide";
 
 export default async function IsAuthenticated({children}){
-  //const user = (await authProvider.whoami()).data;
-  //  redirect("/login")
-  // });
+  const tsyuser = (await authProvider.whoami()).data;
+  
   const user = {
     username:"hidden-machina",
     firstname:"cocorico",

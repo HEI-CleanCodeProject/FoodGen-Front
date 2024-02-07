@@ -17,7 +17,7 @@ export const authProvider = {
     }).then((token) => {
       return token.data
     }).catch((e) => {
-        console.error(e);
+      throw e;
     })
   },
   createUser: async (userToBeCreated) => {
@@ -28,8 +28,8 @@ export const authProvider = {
         email:userToBeCreated.email
       }).then((userCreated) => {
       return userCreated.data;
-    }).catch(()=>{
-      throw new Error("couldn't create user")
+    }).catch((e)=>{
+      throw e;
     })
   },
 }
