@@ -10,6 +10,7 @@ jest.mock('next/navigation', () => ({
 
 describe("LoginPage", () => {
   it("should render login form", () => {
+    
     render(<LoginPage />);
     const emailInput = screen.getByPlaceholderText("Email address");
     const passwordInput = screen.getByPlaceholderText("Password");

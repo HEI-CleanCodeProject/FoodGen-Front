@@ -17,7 +17,8 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
       <div className=" w-full "></div>
       <nav>
         <Link href="/" >
-      <Image src="/images/home.png" className="logo_login" alt="logo"/>
+
+      <Image src="/images/home.png" className="logo_login" alt="logo" height={140} width={140}/>
         </Link>
       </nav>
       
