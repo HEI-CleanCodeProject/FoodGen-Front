@@ -4,6 +4,7 @@ import { authProvider } from "@/app/provider/authProvider/clientSide"
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/navigation"
 import CarouselComponent from "@/app/components/carousel/Carousel";
+import Link from "next/link"
 import "./register.css"
 import Image from "next/image"
 
@@ -42,9 +43,14 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
   return (
      
     <div className="main_bg">
-      <div className=" w-full "></div>    
+      <div className=" w-full "></div>
+      <nav>
+  <Link href="/">
+  <img src="/images/home.png" className="logo_register" alt="home logo"/>    
+  </Link>
+</nav>
        <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
-        <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
+        <div className="_bodyContainer flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
                 <CarouselComponent/>           
@@ -146,6 +152,9 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
               </button>
             </div>
           </form>
+          <nav>
+              <Link href="/login">Go to Login</Link>
+            </nav>
         </div>
           </div>
         </div>

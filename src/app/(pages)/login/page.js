@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { authProvider } from "@/app/provider/authProvider/clientSide";
 import { useRouter } from "next/navigation";
 import CarouselComponent from "@/app/components/carousel/Carousel";
+import Link from "next/link";
 import "./Login.css"
 
 function LoginPageUI({register, handleSubmit, formSubmit}) {
@@ -13,8 +14,14 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
     <>
      <div className="_mainBody">
       <div className=" w-full "></div>
+      <nav>
+        <Link href="/" >
+         <img src="/images/home.png" className="logo_login" alt="home logo"/>
+        </Link>
+      </nav>
+      
        <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
-        <div className="min-h-screen flex fle-col items-center justify-center lg:p-6 p-4">
+        <div className="_bodyContainer flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
                 <CarouselComponent/>           
@@ -64,7 +71,12 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   Log in
                 </button>
               </div>
+                  <nav>
+              <Link href="/register">Go to Register</Link>
+            </nav>
             </form>
+        
+            
           </div>
         </div>
       </div>
