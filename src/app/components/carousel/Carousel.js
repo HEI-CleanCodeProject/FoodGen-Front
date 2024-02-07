@@ -9,7 +9,7 @@ const CarouselComponent = () => {
     <div className="carousel-container">
       <div className="carousel-wrapper">
         <div className="overlay"></div>
-        <Carousel autoPlay infiniteLoop className="">
+        <Carousel showThumbs={false} autoPlay infiniteLoop className="">
           <div>
             <Image src="/images/1.png" alt="Image 1" className="carousel-image" width={800} height={600} />
           </div>
