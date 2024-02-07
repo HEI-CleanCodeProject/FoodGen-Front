@@ -15,7 +15,6 @@ export default function Navbar(props) {
           <Logo />
         </div>
         {props.user ? <UserInformationAccess user={props.user}/> : <></>}
-        
       </nav>
     </header>
   );

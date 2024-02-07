@@ -35,21 +35,14 @@ export const authProvider = {
   },
 
   whoami: async (token) => {
-    const user = {
-      username:"hidden-machina",
-      firstname:"cocorico",
-      lastname:"banzai",
-      email:"test.test@gmail.com"
-    }
-    return user;
-    // return app.get("/users/whoami",{
-    //   headers:{
-    //     Authorization:"Bearer "+token
-    //   }
-    // }).then((user)=>{
-    //   return user.data;
-    // }).catch((e)=>{
-    //   throw e;
-    // })
+    return app.get("/users/whoami",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((user)=>{
+      return user.data;
+    }).catch((e)=>{
+      throw e;
+    })
   }
 }

@@ -102,7 +102,6 @@ function LoginPageLogique({UI}) {
 
   const formSubmit = (data) => {
     authProvider.login(data).then((token)=>{
-      console.log(token);
       sessionStorage.setItem(process.env.NEXT_PUBLIC_SESSION, token)
       router.push("/food/generator")
     }).catch((e)=>{
