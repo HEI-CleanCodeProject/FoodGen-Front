@@ -6,7 +6,7 @@ export const authProvider = {
     const token = cookies.getItem(process.env.SESSION);
     return axios.get(process.env.NEXT_PUBLIC_BASE_URL,{
       headers:{
-        Authorization:`Bearer ${token}`
+        Authorization:"Bearer "+token
       }
     })
   }

@@ -67,7 +67,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 type="text"
                 autoComplete="current-first_name"
                 required
-                className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                className=" register-input"
                 placeholder="Firstname"
               />
               </div>
@@ -82,7 +82,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   type="text"
                   autoComplete="current-last_name"
                   required
-                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                  className="register-input"
                   placeholder="Lastname"
                 />
               </div>
@@ -96,7 +96,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   type="text"
                   autoComplete="current-username"
                   required
-                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                  className="register-input"
                   placeholder="Username"
                 />
               </div>
@@ -118,7 +118,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 type="email"
                 autoComplete="email"
                 required
-                className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                className="register-input"
                 placeholder="Email address"
               />
               </div>
@@ -133,7 +133,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                 type="password"
                 autoComplete="current-password"
                 required
-                className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                className="register-input"
                 placeholder="Password"
               />
               </div>

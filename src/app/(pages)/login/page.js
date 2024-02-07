@@ -41,7 +41,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   type="email"
                   autoComplete="email"
                   required
-                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                  className= "register-input "
                   placeholder="Email address"
                 />
               </div>
@@ -52,7 +52,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className=" w-full text-sm px-4 py-3.5 rounded-md _inputStyle"
+                  className=" register-input"
                   placeholder="Password"
                 />
               </div>
@@ -88,7 +88,9 @@ function LoginPageLogique({UI}) {
 
   const formSubmit = (data) => {
     console.log(data)
-    authProvider.login({data}).then(()=>{
+    authProvider.login(data).then((token)=>{
+      console.log(token);
+      document.cookie=`${process.env.SESSION}=${token}`
       router.push("/food/generator")
     }).catch((e)=>{
       console.error(e)

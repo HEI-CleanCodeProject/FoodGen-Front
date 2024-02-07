@@ -4,15 +4,15 @@ import { redirect } from "next/navigation";
 import Navbar from "./food/generator/navbar";
 
 export default async function IsAuthenticated({children}){
-  // const user = await authProvider.whoami().catch(()=>{
+  //const user = (await authProvider.whoami()).data;
   //  redirect("/login")
   // });
-/*  const user = {
+  const user = {
     username:"hidden-machina",
     firstname:"cocorico",
     lastname:"banzai",
     email:"test.test@gmail.com"
-  }*/
+  }
     
   return(
     <>

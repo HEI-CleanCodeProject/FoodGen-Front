@@ -2,10 +2,10 @@
 import axios from "axios"
 
 export const authProvider = {
-  login: async ({username, password}) => {
+  login: async ({email, password}) => {
     //TODO: implement proper provider
-    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/login",{
-        "username":username,"password":password
+    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/users/login",{
+        "email":email,"password":password
     }).then((token) => {
         console.log(token)
         return token;
@@ -13,10 +13,9 @@ export const authProvider = {
         console.error(e);
     })
   },
-
   createUser: async (userToBeCreated) => {
     //TODO: implement proper createUser
-    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/users", [userToBeCreated]).then((userCreated) => {
+    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/users/signup", userToBeCreated).then((userCreated) => {
       return userCreated;
     }).catch(()=>{
       throw new Error("couldn't create user")
