@@ -34,17 +34,22 @@ export const authProvider = {
     })
   },
 
-  whoami: async () => {
-    const token = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
-
-    return app.get("/users/whoami",{
-      headers:{
-        Authorization:"Bearer "+token
-      }
-    }).then((user)=>{
-      return user.data;
-    }).catch((e)=>{
-      throw e;
-    })
+  whoami: async (token) => {
+    const user = {
+      username:"hidden-machina",
+      firstname:"cocorico",
+      lastname:"banzai",
+      email:"test.test@gmail.com"
+    }
+    return user;
+    // return app.get("/users/whoami",{
+    //   headers:{
+    //     Authorization:"Bearer "+token
+    //   }
+    // }).then((user)=>{
+    //   return user.data;
+    // }).catch((e)=>{
+    //   throw e;
+    // })
   }
 }

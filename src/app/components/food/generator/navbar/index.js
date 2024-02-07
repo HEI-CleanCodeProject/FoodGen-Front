@@ -14,7 +14,8 @@ export default function Navbar(props) {
         <div className="w-5/6">
           <Logo />
         </div>
-        <UserInformationAccess user={props.user}/>
+        {props.user ? <UserInformationAccess user={props.user}/> : <></>}
+        
       </nav>
     </header>
   );

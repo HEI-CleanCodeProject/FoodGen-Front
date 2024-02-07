@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect } from "react";
 import ReactPortal from "./ReactPortal";
 import React from "react";

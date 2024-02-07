@@ -5,20 +5,22 @@ import Navbar from "./food/generator/navbar";
 import { authProvider } from "../provider/authProvider/clientSide";
 
 export default function IsAuthenticated({children}){
-  const [user,setUser] = useState(null);
+  const [token, setToken] = useState(null)
+  const [user, setUser] = useState(null);
+  useEffect(()=>{
+    const t = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
+    setToken(t);
+  },[])
   
   useEffect(()=>{
-   authProvider.whoami().then((u)=>{
-    setUser(u)
-   });
-  },[user])
-  // const user = {
-  //   username:"hidden-machina",
-  //   firstname:"cocorico",
-  //   lastname:"banzai",
-  //   email:"test.test@gmail.com"
-  // }
-  if(!user) null
+    if(token){
+      authProvider.whoami(token).then((user)=>{
+        setUser(user);
+      }).catch((err)=>{
+        console.log(err)
+      });
+    }
+  },[token])
 
   return(
     <>
