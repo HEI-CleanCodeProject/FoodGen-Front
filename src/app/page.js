@@ -14,20 +14,20 @@ const HomePage = () => {
   return (
     <div className=" min-h-screen main_bg">
       <nav className="_NavLink text-white">
-        <Link href="/">Home</Link>
-        <Link href="/login">Login</Link>
-        <Link href="/register">Register</Link>
+        <Link className="_link" href="/">Home</Link>
+        <Link className="_link" href="/login">Login</Link>
+        <Link className="_link" href="/register">Register</Link>
       </nav>
       <div className="text-white p-4 flex">
         <div className="w-1/2 p-4">
           <img
             src={mealImage}
             alt="Your Image"
-            className="w-full h-auto max-h-132 max-w-132"
+            className="max-h-102 max-w-102"
           />
         </div>
         <div className="w-1/2 p-4">
-          <p>Texte de la partie droite.</p>
+          <p>Right part</p>
         </div>
       </div>
     </div>
