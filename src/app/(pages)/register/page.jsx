@@ -46,7 +46,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
       <div className=" w-full "></div>
       <nav>
   <Link href="/">
-  <img src="/images/home.png" className="logo_register" alt="home logo"/>    
+  <Image src="/images/home.png" className="logo_register" alt="logo"/>
   </Link>
 </nav>
        <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { authProvider } from "@/app/provider/authProvider/clientSide";
 import { useRouter } from "next/navigation";
 import CarouselComponent from "@/app/components/carousel/Carousel";
+import Image from 'next/image';
 import Link from "next/link";
 import "./Login.css"
 
@@ -16,7 +17,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
       <div className=" w-full "></div>
       <nav>
         <Link href="/" >
-         <img src="/images/home.png" className="logo_login" alt="home logo"/>
+      <Image src="/images/home.png" className="logo_login" alt="logo"/>
         </Link>
       </nav>
       
