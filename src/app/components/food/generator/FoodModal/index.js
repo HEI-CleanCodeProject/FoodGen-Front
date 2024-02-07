@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { Context } from "@/app/contextProvider";
 ("@/app/contextProvider");
 import Modal from "../modal";
+import { ListIngredients } from "./ListIngredients";
 
 export function FoodModal() {
   const { data, isOpen, closeModalAndClearData } = useContext(Context);
@@ -27,12 +28,18 @@ export function FoodModal() {
             </div>
             <div className="md:flex-1 px-4">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{data.name}</h2>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-                ante justo. Integer euismod libero id mauris malesuada tincidunt.
-              </p>
               <div>
-                <span className="font-bold text-gray-700 dark:text-gray-300">Instruction:</span>
+                <span className="font-bold text-gray-700 dark:text-gray-300">Description :</span>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                  {data.readme}
+                </p>
+              </div>
+              <div>
+                <span className="font-bold text-gray-700 dark:text-gray-300">Ingredients :</span>
+                <ListIngredients /> 
+              </div>
+              <div>
+                <span className="font-bold text-gray-700 dark:text-gray-300">Recipe Instruction :</span>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
                   {data.readme}
                 </p>

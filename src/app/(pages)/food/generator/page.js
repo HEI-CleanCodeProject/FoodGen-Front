@@ -3,20 +3,15 @@
 import React, { useEffect, useState } from "react";
 import RegenerateIcon from "@/app/components/icons/RegenerateIcon";
 import { ListMeals } from "@/app/components/food/generator/listMeals";
+import ProvideToken from "@/app/provider/sessionProvider";
 
-function GeneratorLogique({UI}){
-  const [token, setToken] = useState(null);
-
-  useEffect(()=>{
-    const t = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
-    setToken(t)
-  },[])
+function GeneratorLogique({UI, token}){
   return(
     <UI token={token}/>
   )
 }
 
-function GeneratorUI({meals, token}) {
+function GeneratorUI({token}) {
   return (
     <div data-testId="generator" >
       <div className="p-2">
@@ -41,5 +36,5 @@ function GeneratorUI({meals, token}) {
 }
 
 export default function Generator() {
-  return <GeneratorLogique UI={GeneratorUI}/>
+  return <ProvideToken Component={(token)=>GeneratorLogique({token:token,UI:GeneratorUI})}/>
 }
