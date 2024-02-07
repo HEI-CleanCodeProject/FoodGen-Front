@@ -75,5 +75,17 @@ export const authProvider = {
     // }).then((e) => {
     //   throw e;
     // })
+  },
+
+  getRecipe: async (mealId ,token) => {
+    return app.get(`/recipes/${mealId}`,{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((recipe) => {
+      return recipe.data;  
+    }).catch((e) => {
+      throw e;
+    })
   }
 }

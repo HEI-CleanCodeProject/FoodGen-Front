@@ -2,7 +2,7 @@ import { authProvider } from "@/app/provider/authProvider/clientSide";
 import ProvideToken from "@/app/provider/sessionProvider";
 import React,{ useEffect, useState } from "react"
 
-function ListIngredientsUI({ ingredients }) {
+function ListIngredientsUI({ ingredient }) {
     return (
         <ul class="list-disc list-inside font-semibold">
             <li>First level item</li>
@@ -12,18 +12,25 @@ function ListIngredientsUI({ ingredients }) {
     )
 }
 
-function ListIngredientsLogique({UI, token}){
-  const [ingredients, setIngredients] = useState(null);
+function ListIngredientsLogique({UI, meal, token}){
+  const [recipe, setRecipe] = useState(null);
   useEffect(()=>{
-    
+    authProvider.getRecipe(meal.id,token).then((recipe)=>{
+        setRecipe(recipe);
+    }).catch((e)=>{
+        console.log("can't fetch recipe")
+    })
   },[token])
+
+  if(!recipe) return <>fetching recipe</>
+  
   return(
-    <UI ingredients={ingredients}/>
+    <UI ingredient={recipe.ingredient}/>
   )
 }
 
-export function ListIngredients(){
+export function ListIngredients({meal}){
   return(
-    <ProvideToken Component={(token)=>ListIngredientsLogique({token:token,UI:ListIngredientsUI})}/>
+    <ProvideToken Component={(token)=>ListIngredientsLogique({token:token,meal:meal,UI:ListIngredientsUI})}/>
   )
 }
