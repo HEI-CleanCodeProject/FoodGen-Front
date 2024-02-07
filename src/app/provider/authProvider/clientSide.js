@@ -44,5 +44,17 @@ export const authProvider = {
     }).catch((e)=>{
       throw e;
     })
+  },
+  
+  getMeals: async (token) => {
+    return app.get("/meals",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((meals) => {
+      return meals.data;
+    }).then((e) => {
+      throw e;
+    })
   }
 }
