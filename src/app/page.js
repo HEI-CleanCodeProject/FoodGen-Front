@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,12 +28,7 @@ const HomePage = () => {
       </nav>
       <div className="text-white p-4 flex">
         <div className="w-1/2 p-4">
-          <Image
-            src={mealImage}
-            alt="Your Image"
-            width={432}
-            height={432}
-          />
+          <Image src={mealImage} alt="Your Image" width={432} height={432} />
         </div>
         <div className="w-1/2 p-4">
           <p>Right part</p>
