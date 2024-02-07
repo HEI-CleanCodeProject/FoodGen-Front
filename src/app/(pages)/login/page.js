@@ -101,7 +101,6 @@ function LoginPageLogique({UI}) {
   const router = useRouter();
 
   const formSubmit = (data) => {
-    console.log(data)
     authProvider.login(data).then((token)=>{
       console.log(token);
       document.cookie=`${process.env.SESSION}=${token}`
