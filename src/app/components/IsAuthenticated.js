@@ -1,6 +1,4 @@
-import { authProvider} from "../provider/authProvider/serverSide";
 import React from "react";
-import { redirect } from "next/navigation";
 import Navbar from "./food/generator/navbar";
 
 export default async function IsAuthenticated({children}){

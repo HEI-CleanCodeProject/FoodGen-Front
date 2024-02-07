@@ -28,6 +28,7 @@ function RegisterLogique({ UI }) {
   const formSubmit = (data) => {
     console.log(data)
     authProvider.createUser(data).then((user) => {
+      console.log("user")
       if (user) {
         router.push("/login")
       }

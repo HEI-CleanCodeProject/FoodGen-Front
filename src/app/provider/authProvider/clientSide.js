@@ -1,33 +1,35 @@
 "use client"
 import axios from "axios"
 
+const app = axios.create({
+  baseURL:process.env.NEXT_PUBLIC_BASE_URL,
+  headers:{
+    'Content-Type': 'application/json',
+  }
+})
+
 export const authProvider = {
-  login: async ({email, password}) => {
+  login: async (data) => {
     //TODO: implement proper provider
-    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/users/login",{
-        "email":email,"password":password
+    return app.post("/users/login",{
+      "email":data.email,
+      "password":data.password
     }).then((token) => {
-        console.log(token)
-        return token;
+      return token.data
     }).catch((e) => {
         console.error(e);
     })
   },
   createUser: async (userToBeCreated) => {
     //TODO: implement proper createUser
-    return axios.post(process.env.NEXT_PUBLIC_BASE_URL + "/users/signup", userToBeCreated).then((userCreated) => {
-      return userCreated;
+    return app.post("/users/signup", {
+        username:userToBeCreated.username,
+        password:userToBeCreated.password,
+        email:userToBeCreated.email
+      }).then((userCreated) => {
+      return userCreated.data;
     }).catch(()=>{
       throw new Error("couldn't create user")
     })
   },
-
-  getUser: async () => {
-    const token = sessionStorage.getItem(process.env.SESSION);
-    return axios.get(process.env.NEXT_PUBLIC_BASE_URL,{
-      headers:{
-        Authorization:token
-      }
-    })
-  }
 }
