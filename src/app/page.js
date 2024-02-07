@@ -14,9 +14,15 @@ const HomePage = () => {
   return (
     <div className=" min-h-screen main_bg">
       <nav className="_NavLink text-white">
-        <Link className="_link" href="/">Home</Link>
-        <Link className="_link" href="/login">Login</Link>
-        <Link className="_link" href="/register">Register</Link>
+        <Link className="_link" href="/">
+          Home
+        </Link>
+        <Link className="_link" href="/login">
+          Login
+        </Link>
+        <Link className="_link" href="/register">
+          Register
+        </Link>
       </nav>
       <div className="text-white p-4 flex">
         <div className="w-1/2 p-4">
