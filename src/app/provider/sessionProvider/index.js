@@ -9,7 +9,7 @@ export default function ProvideToken({Component}){
     if(t){
         setToken(t);
     }
-  })
+  },[]);
   if(!token) return null;
   return(
     <Component token={token}/>

@@ -15,6 +15,6 @@ export function ListMeals({token}){
     }
   },[token])
   return(
-    <>{meals ? meals.map((meal)=><Card meal={meal}/> ):<>no meals where loaded</>}</>
+    <>{meals ? meals.map((meal)=><Card key={meal.id} meal={meal}/> ):<>no meals where loaded</>}</>
   )
 }

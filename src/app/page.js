@@ -28,10 +28,15 @@ const HomePage = () => {
       </nav>
       <div className="text-white p-4 flex">
         <div className="w-1/2 p-4">
-        <p>left part</p>
+          <p>left part</p>
         </div>
         <div className="w-1/2 p-4">
-        <Image src="/images/foodMenu.png" alt="main image" width={432} height={432} />
+          <Image
+            src="/images/foodMenu.png"
+            alt="main image"
+            width={432}
+            height={432}
+          />
         </div>
       </div>
     </div>

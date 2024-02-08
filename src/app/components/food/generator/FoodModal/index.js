@@ -2,6 +2,7 @@
 import React from "react";
 import { useContext, useState } from "react";
 import { Context } from "@/app/contextProvider";
+import Image from "next/image";
 ("@/app/contextProvider");
 import Modal from "../modal";
 import { ListIngredients } from "./ListIngredients";
@@ -18,7 +19,7 @@ export function FoodModal() {
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
               <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                <img className="w-full h-full object-cover" src={data.image} alt="meal Image" />
+                <Image className="w-full h-full object-cover" src={data.image} alt="meal Image"/>
               </div>
               <div className="flex -mx-2 mb-4">
                 <div className="w-full px-2">
