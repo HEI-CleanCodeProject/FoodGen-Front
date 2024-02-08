@@ -73,7 +73,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   Log in
                 </button>
               </div>
-                  <nav>
+                  <nav className="text-center text-white">
               <Link href="/register">Go to Register</Link>
             </nav>
             </form>
@@ -102,8 +102,7 @@ function LoginPageLogique({UI}) {
 
   const formSubmit = (data) => {
     authProvider.login(data).then((token)=>{
-      console.log(token);
-      document.cookie=`${process.env.SESSION}=${token}`
+      sessionStorage.setItem(process.env.NEXT_PUBLIC_SESSION, token)
       router.push("/food/generator")
     }).catch((e)=>{
       console.error(e)

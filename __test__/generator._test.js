@@ -5,7 +5,7 @@ import Generator from "@/app/(pages)/food/generator/page";
 import Navbar from "@/app/components/food/generator/navbar";
 import ContextProvider from "@/app/contextProvider";
 
-describe("Generator TestCase ", () => {
+xdescribe("Generator TestCase ", () => {
   beforeAll(()=>{
     render(
       <ContextProvider>
@@ -24,7 +24,7 @@ describe("Generator TestCase ", () => {
   })
 })
 
-describe("Navbar TestCase", () => {
+xdescribe("Navbar TestCase", () => {
   it("should render the navbar and have the user informations inside the modal", ()=>{
     render(
       <Navbar

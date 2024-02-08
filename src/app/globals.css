@@ -59,7 +59,7 @@ body {
     outline: none;
     background-color: #d0d3e74e;
     border-color: #21212100;
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.704);
     font-family: cursive;
     font-size: 16px;
   }
@@ -88,4 +88,14 @@ padding: 0  30px;
 ._body{
   display: flex;
   flex-direction: row;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 213, 151, 0.419);
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
 }
