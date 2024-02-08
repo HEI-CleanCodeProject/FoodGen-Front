@@ -3,21 +3,19 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./food/generator/navbar";
 import { authProvider } from "../provider/authProvider/clientSide";
+import { useRouter } from "next/navigation";
+import ProvideToken from "../provider/sessionProvider";
 
-export default function IsAuthenticated({children}){
-  const [token, setToken] = useState(null)
+function IsAuthenticatedLogique({children, token}){
   const [user, setUser] = useState(null);
-  useEffect(()=>{
-    const t = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
-    setToken(t);
-  },[])
   
   useEffect(()=>{
     if(token){
       authProvider.whoami(token).then((user)=>{
         setUser(user);
       }).catch((err)=>{
-        console.log(err)
+        sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION)
+        router.push("/login")
       });
     }
   },[token])
@@ -27,5 +25,17 @@ export default function IsAuthenticated({children}){
       <Navbar user={user}/>
       {children}
     </>
+  )
+}
+
+export default function IsAuthenticated({children}){
+  return (
+    <ProvideToken
+      Component={(token)=>{
+        <IsAuthenticatedLogique token={token}>
+          {children}
+        </IsAuthenticatedLogique>}
+      }
+    />
   )
 }
