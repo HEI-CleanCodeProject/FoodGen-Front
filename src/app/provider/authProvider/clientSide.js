@@ -11,7 +11,6 @@ const app = axios.create({
 export const authProvider = {
   login: async (data) => {
     //TODO: implement proper provider
-<<<<<<< HEAD
     return app
       .post("/users/login", {
         email: data.email,
@@ -23,17 +22,6 @@ export const authProvider = {
       .catch((e) => {
         throw e;
       });
-=======
-    // return "token leka"
-    return app.post("/users/login",{
-      "email":data.email,
-      "password":data.password
-    }).then((token) => {
-      return token.data
-    }).catch((e) => {
-      throw e;
-    })
->>>>>>> 1092c54a50498ee8ad5e69c4064209520a638183
   },
 
   createUser: async (userToBeCreated) => {
