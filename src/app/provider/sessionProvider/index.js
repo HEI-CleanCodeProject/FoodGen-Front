@@ -8,12 +8,14 @@ export default function ProvideToken({Component}){
   const [token, setToken] = useState("");
   useEffect(()=>{
     const t = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
+    console.log(t + "asd;flkasdf;lkj kaka");
     if(!t){
       router.push("/login");
     }else{
       setToken(t);
     }
-  },[])
+  },[token])
+  console.log(token)
   if(token === "") return <></>;
   return(
     <Component token={token}/>

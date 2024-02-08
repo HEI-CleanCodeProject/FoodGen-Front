@@ -10,8 +10,6 @@ const app = axios.create({
 
 export const authProvider = {
   login: async (data) => {
-    //TODO: implement proper provider
-    // return "token leka"
     return app.post("/users/login",{
       "email":data.email,
       "password":data.password
@@ -23,7 +21,6 @@ export const authProvider = {
   },
 
   createUser: async (userToBeCreated) => {
-    //TODO: implement proper createUser
     return app.post("/users/signup", {
         username:userToBeCreated.username,
         password:userToBeCreated.password,
@@ -36,10 +33,6 @@ export const authProvider = {
   },
 
   whoami: async (token) => {
-    // return {
-    //   usename:"tsy aiko",
-    //   email:"@zavatra"
-    // }
     return app.get("/users/whoami",{
       headers:{
         Authorization:"Bearer "+token
@@ -51,31 +44,28 @@ export const authProvider = {
     })
   },
   
-  getMeals: async (token) => {
-    return [{
-      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      "name": "Pizza",
-      "region": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "name": "Italy"
-      },
-      "recipe": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "name": "Pizza",
-        "readme": "Bunch of text"
-      },
-      "image": "http://zavatra.com",
-      "download": 10
-    }]
-    // return app.get("/meals",{
-    //   headers:{
-    //     Authorization:"Bearer "+token
-    //   }
-    // }).then((meals) => {
-    //   return meals.data;
-    // }).then((e) => {
-    //   throw e;
-    // })
+  getMealsRating: async (token) => {
+    return app.get("/mealsByRating",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((meals) => {
+      return meals.data;
+    }).catch((e) => {
+      throw e;
+    })
+  },
+  
+  getMealsRandom: async (token) => {
+    return app.get("/meals",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((meals) => {
+      return meals.data;
+    }).catch((e) => {
+      throw e;
+    })
   },
 
   getRecipe: async (mealId ,token) => {
