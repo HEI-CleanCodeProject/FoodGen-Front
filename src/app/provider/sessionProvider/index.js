@@ -14,7 +14,7 @@ export default function ProvideToken({Component}){
       setToken(t);
     }
   },[])
-  if(token === "") return null;
+  if(token === "") return <></>;
   return(
     <Component token={token}/>
   )

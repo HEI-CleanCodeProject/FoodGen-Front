@@ -3,13 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./food/generator/navbar";
 import { authProvider } from "../provider/authProvider/clientSide";
-import { useRouter } from "next/navigation";
 import ProvideToken from "../provider/sessionProvider";
 
 function IsAuthenticatedLogique({children, token}){
   const [user, setUser] = useState(null);
   
   useEffect(()=>{
+    console.log("whoami")
     if(token){
       authProvider.whoami(token).then((user)=>{
         setUser(user);
@@ -31,10 +31,11 @@ function IsAuthenticatedLogique({children, token}){
 export default function IsAuthenticated({children}){
   return (
     <ProvideToken
-      Component={(token)=>{
-        <IsAuthenticatedLogique token={token}>
-          {children}
-        </IsAuthenticatedLogique>}
+      Component={(token)=>(
+          <IsAuthenticatedLogique token={token}>
+            {children}
+          </IsAuthenticatedLogique>
+        )
       }
     />
   )

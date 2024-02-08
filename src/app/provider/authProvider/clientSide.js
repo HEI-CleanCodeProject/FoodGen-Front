@@ -11,6 +11,7 @@ const app = axios.create({
 export const authProvider = {
   login: async (data) => {
     //TODO: implement proper provider
+    // return "token leka"
     return app.post("/users/login",{
       "email":data.email,
       "password":data.password
@@ -35,19 +36,19 @@ export const authProvider = {
   },
 
   whoami: async (token) => {
-    return {
-      usename:"tsy aiko",
-      email:"@zavatra"
-    }
-    // return app.get("/users/whoami",{
-    //   headers:{
-    //     Authorization:"Bearer "+token
-    //   }
-    // }).then((user)=>{
-    //   return user.data;
-    // }).catch((e)=>{
-    //   throw e;
-    // })
+    // return {
+    //   usename:"tsy aiko",
+    //   email:"@zavatra"
+    // }
+    return app.get("/users/whoami",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((user)=>{
+      return user.data;
+    }).catch((e)=>{
+      throw e;
+    })
   },
   
   getMeals: async (token) => {
@@ -63,7 +64,7 @@ export const authProvider = {
         "name": "Pizza",
         "readme": "Bunch of text"
       },
-      "image": "string",
+      "image": "http://zavatra.com",
       "download": 10
     }]
     // return app.get("/meals",{

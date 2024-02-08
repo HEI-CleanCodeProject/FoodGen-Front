@@ -16,7 +16,7 @@ export default function Card({meal}) {
     >
       <div className="w-full h-full">
         <div className="bg-color-2 h-3/6 w-full shadow-xl rounded">
-          <Image alt="my image" src={meal.imgage} className="w-full h-full" />
+          <Image alt="my image" width={100} height={100} src={meal.imgage} className="w-full h-full" />
         </div>
         <div className={`p-1 h-2/6`}>
           <h4 className="py-1 text-2xl font-medium">{meal.name}</h4>
