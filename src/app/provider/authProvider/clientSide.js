@@ -11,6 +11,7 @@ const app = axios.create({
 export const authProvider = {
   login: async (data) => {
     //TODO: implement proper provider
+<<<<<<< HEAD
     return app
       .post("/users/login", {
         email: data.email,
@@ -22,6 +23,17 @@ export const authProvider = {
       .catch((e) => {
         throw e;
       });
+=======
+    // return "token leka"
+    return app.post("/users/login",{
+      "email":data.email,
+      "password":data.password
+    }).then((token) => {
+      return token.data
+    }).catch((e) => {
+      throw e;
+    })
+>>>>>>> 1092c54a50498ee8ad5e69c4064209520a638183
   },
 
   createUser: async (userToBeCreated) => {
@@ -41,19 +53,19 @@ export const authProvider = {
   },
 
   whoami: async (token) => {
-    return {
-      usename: "tsy aiko",
-      email: "@zavatra",
-    };
-    // return app.get("/users/whoami",{
-    //   headers:{
-    //     Authorization:"Bearer "+token
-    //   }
-    // }).then((user)=>{
-    //   return user.data;
-    // }).catch((e)=>{
-    //   throw e;
-    // })
+    // return {
+    //   usename:"tsy aiko",
+    //   email:"@zavatra"
+    // }
+    return app.get("/users/whoami",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then((user)=>{
+      return user.data;
+    }).catch((e)=>{
+      throw e;
+    })
   },
 
   getMeals: async (token) => {
@@ -74,6 +86,7 @@ export const authProvider = {
         download: 10,
       },
     ];
+
     // return app.get("/meals",{
     //   headers:{
     //     Authorization:"Bearer "+token

@@ -28,12 +28,16 @@ const HomePage = () => {
       </nav>
       <div className="text-white p-4 flex">
         <div className="w-1/2 p-4">
-          <p>left part</p>
+          <div>
+            <p>left part</p>
+          </div>
+          
         </div>
         <div className="w-1/2 p-4">
           <Image
             src="/images/foodMenu.png"
             alt="main image"
+            className="homeImage"
             width={432}
             height={432}
           />

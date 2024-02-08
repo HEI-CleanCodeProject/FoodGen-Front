@@ -20,7 +20,11 @@ function ListIngredientsLogique({UI, meal, token}){
     }).catch((e)=>{
         console.log("can't fetch recipe")
     })
+<<<<<<< HEAD
   },[meal.id,token])
+=======
+  },[token, meal])
+>>>>>>> 1092c54a50498ee8ad5e69c4064209520a638183
 
   if(!recipe) return <>fetching recipe</>
   
