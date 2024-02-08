@@ -73,7 +73,7 @@ function LoginPageUI({register, handleSubmit, formSubmit}) {
                   Log in
                 </button>
               </div>
-                  <nav>
+                  <nav className="text-center text-white">
               <Link href="/register">Go to Register</Link>
             </nav>
             </form>

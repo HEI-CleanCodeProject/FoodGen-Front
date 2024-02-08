@@ -66,7 +66,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           </h2>
           <form class="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
             <div>
-              <label className="block font-medium ">Firstname</label>
               <div className="mt-1 _inputList">
               <input
                 {...register("first_name", { required: true })}
@@ -81,7 +80,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
 
             <div>
-              <label className="block font-medium ">Lastname</label>
               <div className="mt-1 _inputList">
                 <input
                   {...register("last_name", { required: true })}
@@ -95,7 +93,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
               </div>
             </div>
             <div>
-              <label className="block font-medium ">Username</label>
               <div className="mt-1 _inputList">
                 <input
                   {...register("username", { required: true })}
@@ -109,7 +106,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
               </div>
             </div>
             <div>
-              <label htmlForfor="password" className="block font-medium ">Email</label>
               <div className="mt-1 _inputList">
               <input
                 {...register("email", {
@@ -132,7 +128,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             </div>
 
             <div>
-              <label className="block  font-medium ">Password</label>
               <div className="mt-1 _inputList">
               <input
                 {...register("password", { required: true })}
@@ -153,7 +148,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
               </button>
             </div>
           </form>
-          <nav>
+          <nav className="text-center text-white">
               <Link href="/login">Go to Login</Link>
             </nav>
         </div>

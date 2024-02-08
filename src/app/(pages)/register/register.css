@@ -3,21 +3,20 @@
 }
 ._formStyle{
     background-color: rgba(46, 87, 37, 0.474);
-    border: solid 0px;
+    border: solid 1px;
     margin-left: 30%;
     border-radius: 10px;
     width: 40%;
 }
 ._inputList input{
-    color: rgb(249, 246, 246);
     font-family: cursive;
 
 }
 ._registering{
     background-color: rgba(46, 87, 37, 0.474);
     border-radius: 15px;
-    color: aliceblue;
-font-family: cursive;
+    color: rgba(240, 248, 255, 0.556);
+    font-family: cursive;
 }
 ._btn:hover{
     color: aliceblue;
@@ -46,7 +45,7 @@ font-family: cursive;
 ._inputStyle{
     outline: none;
     background-color: rgba(210, 221, 218, 0.257);
-    color: rgb(246, 242, 242);
+    color: rgba(0, 0, 0, 0.704);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
 }
@@ -61,5 +60,5 @@ font-family: cursive;
     margin-top: 10vh;
 }
 .logo_register{
-    margin-bottom: -15%;
+    margin-bottom: -10%;
   }
