@@ -28,10 +28,13 @@ function RegisterLogique({ UI }) {
   const formSubmit = (data) => {
     console.log(data)
     authProvider.createUser(data).then((user) => {
-      console.log("user")
-      if (user) {
-        router.push("/login")
-      }
+
+      authProvider.login(user).then((token) => {
+        sessionStorage.setItem(process.env.NEXT_PUBLIC_SESSION, token);
+        router.push("/food/form")
+      }).catch(()=>{
+        router.push("login")
+      })
     }).catch((e) => {
       throw e;
     });
