@@ -18,9 +18,10 @@ body {
   background-image: url("/images/backg.png");
   background-size: cover;
   background-position: 35%;
-  backdrop-filter: "blur(80px)";
 }
-
+._menu{
+  border: solid 1px;
+}
 .bg-color-1 {
   background-color: var(--color-one);
 }
@@ -112,11 +113,13 @@ padding: 0  30px;
   border-radius: 50%;
 }
 ._left{
-  margin: 4% 10%;
+  margin: 5% 5%;
 }
 ._right{
   margin-left:13%;
 }
 ._pointer{
-  
+  margin-left: -50px;
+  width: 210px;
+  height: 120px;
 }

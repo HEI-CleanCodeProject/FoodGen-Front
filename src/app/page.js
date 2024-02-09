@@ -38,19 +38,18 @@ const HomePage = () => {
       </nav>
       <div className="text-white p-4 flex _left">
         <div className="w-1/2">
-          <div className="flex ">
+          <div className="flex _left_flex">
             <Image
               src="/images/MenuBG.png"
               alt="logo"
-              width={400}
-              height={400}
+              width={600}
+              height={400 }
+              className="_menu"
             />
-            <Image
+            <img
               src="/images/MenuPointer.png"
               alt="logo"
               className="_pointer"
-              width={80}
-              height={40}
             />
           </div>
         </div>
