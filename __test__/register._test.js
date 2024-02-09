@@ -1,20 +1,16 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+import React, { use } from "react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, it, expect} from "@jest/globals";
 import Register from "@/app/(pages)/register/page";
 import { useForm } from "react-hook-form";
+import { authProvider } from "@/app/provider/authProvider/clientSide";
 
-
-jest.mock("react-hook-form")
-jest.mock("next/navigation",()=>({
-  useRouter:()=>({
-    push:jest.fn()
-  })
-}))
+jest.mock("@/app/provider/authProvider/clientSide");
 
 describe("/describe components test",() => {
-  it("should render the register page",() => {
+  it("should render the register page",async () => {
     const mockHandleSubmit = jest.fn();
+    
     useForm.mockReturnValue(() => ({
         register:jest.fn(),
         handleSubmit:mockHandleSubmit
@@ -22,12 +18,12 @@ describe("/describe components test",() => {
     render(
       <Register />
     );
-    const firstname = screen.getByPlaceholderText("Firstname");
-    const lastname = screen.getByPlaceholderText("Lastname");
-    const username = screen.getByPlaceholderText("Username");
-    const email = screen.getByPlaceholderText("Email address");
-    const password = screen.getByPlaceholderText("Password");
-    const button = screen.getByRole("register-user");
+    const firstname = screen.findByPlaceholderText("Firstname");
+    const lastname = screen.findByPlaceholderText("Lastname");
+    const username = screen.findByPlaceholderText("Username");
+    const email = screen.findByPlaceholderText("Email address");
+    const password = screen.findByPlaceholderText("Password");
+    const button = screen.findByRole("register-user");
 
     const emailTest = "test@example.com";
     const passwordTest = "password123";
@@ -35,6 +31,16 @@ describe("/describe components test",() => {
     const lastnameTest = "john"
     const firstnameTest = "lenonn"
 
+    const mockValue = [firstnameTest,lastnameTest,usernameTest,emailTest,passwordTest]
+
+    Promise.all([firstname,lastname,username,email,password]).then((each)=>{
+      each.map((item,i) => {
+        fireEvent.change(item, { target: { value: mockValue[i]} });
+      })
+      button.then((btn)=>{
+        fireEvent.click(btn)
+      })
+    })
     fireEvent.change(email, { target: { value: emailTest} });
     fireEvent.change(password, { target: { value: passwordTest} });
     fireEvent.change(firstname, { target: { value: firstnameTest} });

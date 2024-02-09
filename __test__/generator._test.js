@@ -45,7 +45,6 @@ xdescribe("Navbar TestCase", () => {
     const modalRendered = screen.findByTestId("modal-rendered")
     const userInformationsRendered = screen.findByTestId("user-informations")
     Promise.all([modalRendered,userInformationsRendered]).then((values)=>{
-      console.log("oooooookkeeeeee")
       expect(values[0]).toBeInstanceOf(HTMLElement);
       expect(values[1]).toBeInstanceOf(HTMLElement);
     })
