@@ -16,6 +16,13 @@ const HomePage = () => {
   return (
     <div className="min-h-screen main_bg">
       <nav className="_NavLink text-white">
+        <Image
+          src="/images/home.png"
+          alt="logo"
+          className="_home_logo"
+          width={100}
+          height={100}
+        />
         <Link className="_link" href="/">
           Home
         </Link>
@@ -26,14 +33,17 @@ const HomePage = () => {
           Register
         </Link>
       </nav>
-      <div className="text-white p-4 flex">
-        <div className="w-1/2 p-4">
-          <div>
-            <p>left part</p>
-          </div>
-          
+      <div className="text-white p-4 flex _left">
+        <div className="w-1/2">
+          <Image
+            src="/images/foodMenu.png"
+            alt="main image"
+            className=""
+            width={432}
+            height={432}
+          />
         </div>
-        <div className="w-1/2 p-4">
+        <div className="w-1/2 _right">
           <Image
             src="/images/foodMenu.png"
             alt="main image"

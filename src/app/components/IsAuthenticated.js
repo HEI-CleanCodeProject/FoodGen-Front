@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./food/generator/navbar";
 import { authProvider } from "../provider/authProvider/clientSide";
+import Router from "next/router";
 import ProvideToken from "../provider/sessionProvider";
 
 function IsAuthenticatedLogique({children, token}){
@@ -15,7 +16,7 @@ function IsAuthenticatedLogique({children, token}){
         setUser(user);
       }).catch((err)=>{
         sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION)
-        router.push("/login")
+        Router.push("/login")
       });
     }
   },[token])

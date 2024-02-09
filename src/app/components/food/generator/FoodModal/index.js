@@ -6,7 +6,6 @@ import Image from "next/image";
 ("@/app/contextProvider");
 import Modal from "../modal";
 import { ListIngredients } from "./ListIngredients";
-import Image from "next/image";
 
 export function FoodModal() {
   const { data, isOpen, closeModalAndClearData } = useContext(Context);

@@ -73,11 +73,16 @@ body {
 .main_bg{
   background-color: rgba(46, 87, 37, 0.474);
 }
+._home_logo{
+  margin: -3% 0;
+}
 
 ._NavLink{
   display: flex;
   flex-direction: row;
   padding: 10px 0;
+background-color: #2121216c;
+
 }
 ._link{
 padding: 0  30px;
@@ -102,4 +107,10 @@ padding: 0  30px;
 .homeImage{
   border: solid 1px;
   border-radius: 50%;
+}
+._left{
+  margin: 4% 10%;
+}
+._right{
+  margin-left:13%;
 }
