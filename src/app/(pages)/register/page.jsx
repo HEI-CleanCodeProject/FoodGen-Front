@@ -25,11 +25,9 @@ function RegisterLogique({ UI }) {
   });
 
   const formSubmit = (data) => {
-    console.log(data);
     authProvider
       .createUser(data)
       .then((user) => {
-        console.log("user");
         if (user) {
           router.push("/login");
         }
@@ -44,24 +42,24 @@ function RegisterLogique({ UI }) {
 
 function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
   return (
-     
+
     <div className="main_bg">
       <div className=" w-full "></div>
       <nav>
-  <Link href="/">
-  <Image src="/images/home.png" className="logo_register" alt="logo"  height={140} width={140}/>
-  </Link>
-</nav>
-       <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
+        <Link href="/">
+          <Image src="/images/home.png" className="logo_register" alt="logo" height={140} width={140} />
+        </Link>
+      </nav>
+      <div className="font-[sans-serif] bg-gradient-to-r  via-emerald-800 to-emerald-600 text-[#333]">
         <div className="_bodyContainer flex fle-col items-center justify-center lg:p-6 p-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
-                <CarouselComponent/>           
+              <CarouselComponent />
             </div>
 
             <div className="_registering shadow-md p-6">
 
-            <Image className="mx-auto" src="https://www.svgrepo.com/show/499664/user-happy.svg" alt="happy" width={56} height={56} />
+              <Image className="mx-auto" src="https://www.svgrepo.com/show/499664/user-happy.svg" alt="happy" width={56} height={56} />
 
           <h2 className="my-3 text-center text-3xl font-bold tracking-tight">
             Sign up for an account

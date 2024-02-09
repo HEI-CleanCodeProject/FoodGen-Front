@@ -37,7 +37,7 @@ export function FoodModal() {
               </div>
               <div>
                 <span className="font-bold text-gray-700 dark:text-gray-300">Ingredients :</span>
-                <ListIngredients meal={data}/> 
+                <ListIngredients meal={data}/>
               </div>
               <div>
                 <span className="font-bold text-gray-700 dark:text-gray-300">Recipe Instruction :</span>

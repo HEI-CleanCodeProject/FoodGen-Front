@@ -6,8 +6,8 @@ function ListIngredientsUI({ ingredients }) {
   console.log(ingredients)
     return (
         <ul class="list-disc list-inside text-[--color-white] font-semibold">
-          {ingredients && ingredients.map((i) => (
-            <li>{i.name}</li>
+          {ingredients && ingredients.map((i, k) => (
+            <li key={k}>{i.name}</li>
           ))}
         </ul>
     )
@@ -19,7 +19,7 @@ function ListIngredientsLogique({UI, meal, token}){
     authProvider.getRecipe(meal.recipe.id,token).then((recipe)=>{
         setRecipe(recipe);
     }).catch((e)=>{
-        console.log("can't fetch recipe")
+        return e;
     })
   },[token, meal])
 

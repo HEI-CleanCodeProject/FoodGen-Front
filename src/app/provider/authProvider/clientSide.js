@@ -9,6 +9,11 @@ const app = axios.create({
 })
 
 export const authProvider = {
+  // TODO: logout bro
+  logout: async (data) => {
+    return "something"
+  },
+
   login: async (data) => {
     return app.post("/users/login",{
       "email":data.email,
@@ -45,7 +50,7 @@ export const authProvider = {
   },
   
   getMealsRating: async (token) => {
-    return app.get("/mealsByRating",{
+    return app.get("/mealsByRating?",{
       headers:{
         Authorization:"Bearer "+token
       }

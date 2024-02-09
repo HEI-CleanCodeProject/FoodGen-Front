@@ -13,7 +13,6 @@ function GeneratorLogique({UI, token}){
 }
 
 function GeneratorUI({token}) {
-  console.log(token)
   return (
     <div data-testId="generator" >
       <div className="p-2">

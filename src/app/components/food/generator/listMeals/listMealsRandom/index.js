@@ -12,7 +12,7 @@ export function ListMealsRandom({token}){
       authProvider.getMealsRandom(token).then((meals)=>{
         setMeals(meals)
       }).catch((e)=>{
-        console.log(e)
+        return e;
       })
     }
   },[token])

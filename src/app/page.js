@@ -7,7 +7,13 @@ const HomePage = () => {
   return (
     <div className="min-h-screen main_bg">
       <nav className="_NavLink text-white">
-      <Image src="/images/home.png" className="_Logo" alt="logo" height={140} width={140}/>
+        <Image
+          src="/images/home.png"
+          className="_Logo"
+          alt="logo"
+          height={140}
+          width={140}
+        />
         <div className="rightSide">
           <Link className="_link" href="/login">
             Login
@@ -17,7 +23,7 @@ const HomePage = () => {
           </Link>
         </div>
       </nav>
-      
+
       <div className="text-white p-4 flex _left">
         <div className="">
           <div className="flex _left_flex">
@@ -32,10 +38,12 @@ const HomePage = () => {
                 <div>
                   <p className="_textMenu">Welcoming</p>
                 </div>
-                <img
+                <Image
                   src="/images/MenuPointer.png"
                   alt="logo"
                   className="_pointer mouse"
+                  width={130}
+                  height={130}
                 />
               </div>
             </div>
