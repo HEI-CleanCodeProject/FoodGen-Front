@@ -24,6 +24,10 @@ export const authProvider = {
       });
   },
 
+  logout: async () => {
+    sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION);
+  },
+
   createUser: async (userToBeCreated) => {
     //TODO: implement proper createUser
     return app
