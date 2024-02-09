@@ -19,9 +19,6 @@ body {
   background-size: cover;
   background-position: 35%;
 }
-._menu{
-  border: solid 1px;
-}
 .bg-color-1 {
   background-color: var(--color-one);
 }
@@ -77,20 +74,21 @@ body {
 ._home_logo{
   margin: -3% 0;
 }
-
+.rightSide{
+  margin-left: 55%;
+}
 ._NavLink{
   display: flex;
   flex-direction: row;
-  padding: 10px 0;
+  padding: 10px 0px;
 background-color: #2121216c;
+}
 
-}
 ._link{
-padding: 0  30px;
+  padding-left: 0  40%;
+ margin-left: 90%;
 }
-._hide{
-  display: hidden;
-}
+
 .left ,.right{
   border: solid 1px;
 }
@@ -114,30 +112,50 @@ padding: 0  30px;
 }
 
 ._right{
-  margin-top: 2%;
+  margin-top: 5%;
   margin-left:13%;
 }
 ._pointer{
   width: 90px;
-  height: 150px;
+  height: 120px;
+  padding-bottom: 10%;
 }
 ._testMenu{
-  padding-left: 10%;
+  margin-top: 20%;
+  padding-left: 13%;
 }
 ._Menu{
   position: absolute;
     z-index: 2;
-    top: 1;
-    left: 22%;
+    top: 3vh;
+    left: 17%;
     width: 15%;
     height: 40%;
-    background-color: rgba(0, 0, 0, 0.5);
-  color: #e6dede;
-  border: solid 1px;
+  color: #040303ce;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border: solid 0px;
   display: flex;
   flex-direction: row;
   margin-top: 10%;
 }
-.mouse{
-  margin-left: 100%;
+
+._textMenu{
+  width: 18vw;
+  margin-top: 25%;
+  text-align: center;
+}
+._left_flex{
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.m{
+  display: flex;
+  flex-direction: row;
+}
+._Logo{
+  z-index: 2;
+  position: absolute;
+top: -5%;
 }
