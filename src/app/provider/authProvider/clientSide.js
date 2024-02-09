@@ -10,8 +10,17 @@ const app = axios.create({
 
 export const authProvider = {
   // TODO: logout bro
-  logout: async (data) => {
-    return "something"
+  logout: async (token) => {
+    return app.get("/users/logout",{
+      headers:{
+        Authorization:"Bearer "+token
+      }
+    }).then(() => {
+      sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION);
+    })
+    .catch((e) => {
+      throw e;
+    })
   },
 
   login: async (data) => {
