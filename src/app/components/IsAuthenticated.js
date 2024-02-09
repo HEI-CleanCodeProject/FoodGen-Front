@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./food/generator/navbar";
 import { authProvider } from "../provider/authProvider/clientSide";
-import { useRouter } from "next/router";
 import ProvideToken from "../provider/sessionProvider";
 import { useRouter } from "next/navigation";
 
