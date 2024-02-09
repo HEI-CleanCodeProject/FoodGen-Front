@@ -59,7 +59,7 @@ body {
     outline: none;
     background-color: #d0d3e74e;
     border-color: #21212100;
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.704);
     font-family: cursive;
     font-size: 16px;
   }
@@ -73,14 +73,22 @@ body {
 .main_bg{
   background-color: rgba(46, 87, 37, 0.474);
 }
+._home_logo{
+  margin: -3% 0;
+}
 
 ._NavLink{
   display: flex;
   flex-direction: row;
   padding: 10px 0;
+background-color: #2121216c;
+
 }
 ._link{
 padding: 0  30px;
+}
+._hide{
+  display: hidden;
 }
 .left ,.right{
   border: solid 1px;
@@ -88,4 +96,27 @@ padding: 0  30px;
 ._body{
   display: flex;
   flex-direction: row;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.917);
+}
+::-webkit-scrollbar-track {
+  background: rgba(49, 52, 50, 0.2);
+}
+.homeImage{
+  border: solid 1px;
+  border-radius: 50%;
+}
+._left{
+  margin: 4% 10%;
+}
+._right{
+  margin-left:13%;
+}
+._pointer{
+  
 }
