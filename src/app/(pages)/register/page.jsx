@@ -25,17 +25,19 @@ function RegisterLogique({ UI }) {
   });
 
   const formSubmit = (data) => {
-    authProvider
-      .createUser(data)
-      .then((user) => {
-        if (user) {
-          router.push("/login");
-        }
+    console.log(data)
+    authProvider.createUser(data).then((user) => {
+
+      authProvider.login(user).then((token) => {
+        sessionStorage.setItem(process.env.NEXT_PUBLIC_SESSION, token);
+        router.push("/food/form")
+      }).catch(()=>{
+        router.push("login")
       })
-      .catch((e) => {
-        throw e;
-      });
-  };
+    }).catch((e) => {
+      throw e;
+    });
+  }
 
   return <UI register={register} formSubmit={formSubmit} handleSubmit={handleSubmit} />;
 }
