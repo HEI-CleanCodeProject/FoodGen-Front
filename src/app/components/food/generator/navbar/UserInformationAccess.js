@@ -6,6 +6,7 @@ import React from "react";
 import LogoutIcon from "@/app/components/Icons/LogoutIcon";
 import UserActionsButton from "./UserActionsButton";
 import EditIcon from "@/app/components/Icons/EditIcon";
+import { authProvider } from "@/app/provider/authProvider/clientSide";
 
 export function UserInformationAccess(props) {
   const {user} = props;
@@ -23,20 +24,23 @@ export function UserInformationAccess(props) {
         </button>
         {isOpen && (
           <Modal isOpen={isOpen} handleClose={() => setIsOpen(!isOpen)}>
-            <div className="flex flex-row shadow-inner bg-white rounded-lg my-3" data-testId="user-informations" >
+            <div className="flex flex-row ustify-center shadow-inner bg-white rounded-lg my-3" data-testId="user-informations" >
               <UserIcon className="w-[160px] h-[160px]"/>
               <div className="flex flex-col p-6">
-                <p className="font-bold py-2 text-xl">{props.username}</p>
-                <p><span className="font-bold">Fullname : </span>{`${props.firstname} ${props.lastname}`}</p>
-                <p><span className="font-bold">Email :</span> {props.email}</p>
+                <p className="font-bold py-2 text-xl">{user.username}</p>
+                <p><span className="font-bold">Fullname : </span>{`${user.firstname} ${user.lastname}`}</p>
+                <p><span className="font-bold">Email :</span> {user.email}</p>
+                <p><span className="font-bold">User id :</span> {user.id}</p>
+                <p><span className="font-bold">Password : </span>
+                  <input disabled type="password" value={user.password}/>
+                </p>
               </div>
               <div>
-                
               </div>
             </div>
-            <div className="flex flex-row shadow-inner flex-wrap bg-white p-2 rounded-lg h-3/5 overflow-auto overflow-x-hidden">
+            <div className="flex flex-row justify-around shadow-inner flex-wrap bg-white p-2 rounded-lg h-3/5 overflow-auto overflow-x-hidden">
               <UserActionsButton label={"Edit profile"} Icon={EditIcon} />
-              <UserActionsButton label={"log out"} Icon={LogoutIcon} onClick={()=>{}} />
+              <UserActionsButton label={"log out"} Icon={LogoutIcon} onClick={()=>{authProvider.logout()}} />
             </div>
           </Modal>
         )}

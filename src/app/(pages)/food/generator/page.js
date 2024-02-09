@@ -1,9 +1,10 @@
 "use client"
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import RegenerateIcon from "@/app/components/icons/RegenerateIcon";
-import { ListMeals } from "@/app/components/food/generator/listMeals";
+import {  ListMealsRating } from "@/app/components/food/generator/listMeals/listMealsByRating";
 import ProvideToken from "@/app/provider/sessionProvider";
+import { ListMealsRandom } from "@/app/components/food/generator/listMeals/listMealsRandom";
 
 function GeneratorLogique({UI, token}){
   return(
@@ -12,17 +13,19 @@ function GeneratorLogique({UI, token}){
 }
 
 function GeneratorUI({token}) {
+  console.log(token)
   return (
     <div data-testId="generator" >
       <div className="p-2">
         <div>
           <h3 className="p-3">Most loved meals</h3>
           <div className="flex flex-wrap row">
+            <ListMealsRating token={token} />
           </div>
         </div>
         <hr className="bg-color-2 w-4/5 m-6" />
         <div className="flex row flex-wrap">
-          <ListMeals token={token}/>
+          <ListMealsRandom token={token}/>
         </div>
         <button className="btn-app-1 fixed right-4 bottom-4">
           <div className="flex flex-row items-center">
@@ -36,5 +39,5 @@ function GeneratorUI({token}) {
 }
 
 export default function Generator() {
-  return <ProvideToken Component={(token)=>GeneratorLogique({token:token,UI:GeneratorUI})}/>
+  return <ProvideToken Component={({token})=><GeneratorLogique UI={GeneratorUI} token={token}/>}/>
 }

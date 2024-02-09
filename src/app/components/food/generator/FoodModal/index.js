@@ -11,7 +11,7 @@ export function FoodModal() {
   const { data, isOpen, closeModalAndClearData } = useContext(Context);
 
   if(!data) return null;
-  
+  console.log(data)
   return (
     <Modal className={"h-90"} handleClose={closeModalAndClearData} isOpen={isOpen}>
       <div className="bg-gray-100 dark:bg-gray-800 py-8">

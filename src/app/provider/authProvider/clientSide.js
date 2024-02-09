@@ -24,6 +24,10 @@ export const authProvider = {
       });
   },
 
+  logout: async () => {
+    sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION);
+  },
+
   createUser: async (userToBeCreated) => {
     //TODO: implement proper createUser
     return app
@@ -41,10 +45,6 @@ export const authProvider = {
   },
 
   whoami: async (token) => {
-    // return {
-    //   usename:"tsy aiko",
-    //   email:"@zavatra"
-    // }
     return app.get("/users/whoami",{
       headers:{
         Authorization:"Bearer "+token
