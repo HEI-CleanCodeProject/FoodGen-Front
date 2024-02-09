@@ -19,7 +19,7 @@ export default function Card({meal}) {
           <Image alt="my image" width={100} height={100} src={meal.imgage} className="w-full h-full" />
         </div>
         <div className={`p-1 h-2/6`}>
-          <h4 className="py-1 text-2xl font-medium">{meal.name}</h4>
+          <h4 className="py-1 text-2xl font-medium truncate">{meal.name}</h4>
           <h4 className="text-md">From : {meal.region.name}</h4>
           <div className="absolute items-center flex flex-row bottom-3 left-3">
             <DownloadIcon />

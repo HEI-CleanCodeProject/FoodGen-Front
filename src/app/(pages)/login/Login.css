@@ -53,8 +53,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 ._bodyContainer{
-    margin-top: 20vh;
-    height:100vh;   
+    height:95vh;   
 }
 .logo_login{
     margin-bottom: -10%;

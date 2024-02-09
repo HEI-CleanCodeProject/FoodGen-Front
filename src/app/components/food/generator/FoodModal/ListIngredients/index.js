@@ -3,7 +3,6 @@ import ProvideToken from "@/app/provider/sessionProvider";
 import React,{ useEffect, useState } from "react"
 
 function ListIngredientsUI({ ingredients }) {
-  console.log(ingredients)
     return (
         <ul class="list-disc list-inside text-[--color-white] font-semibold">
           {ingredients && ingredients.map((i,j) => (

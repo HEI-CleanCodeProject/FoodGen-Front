@@ -7,6 +7,7 @@ import LogoutIcon from "@/app/components/Icons/LogoutIcon";
 import UserActionsButton from "./UserActionsButton";
 import EditIcon from "@/app/components/Icons/EditIcon";
 import { authProvider } from "@/app/provider/authProvider/clientSide";
+import { useRouter } from "next/router";
 
 export function UserInformationAccess(props) {
   const {user} = props;
@@ -39,7 +40,7 @@ export function UserInformationAccess(props) {
               </div>
             </div>
             <div className="flex flex-row justify-around shadow-inner flex-wrap bg-white p-2 rounded-lg h-3/5 overflow-auto overflow-x-hidden">
-              <UserActionsButton label={"Edit profile"} Icon={EditIcon} />
+              <UserActionsButton label={"Add allergie"} Icon={EditIcon} to={"/food/form"}/>
               <UserActionsButton label={"log out"} Icon={LogoutIcon} onClick={()=>{authProvider.logout()}} />
             </div>
           </Modal>

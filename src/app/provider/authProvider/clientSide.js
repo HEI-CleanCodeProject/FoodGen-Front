@@ -10,7 +10,8 @@ const app = axios.create({
 
 export const authProvider = {
   // TODO: logout bro
-  logout: async (data) => {
+  logout: async () => {
+    sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION)
     return "something"
   },
 

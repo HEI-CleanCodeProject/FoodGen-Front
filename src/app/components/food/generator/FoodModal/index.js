@@ -11,7 +11,7 @@ export function FoodModal() {
   const { data, isOpen, closeModalAndClearData } = useContext(Context);
 
   if(!data) return null;
-  console.log(data)
+  console.log(data.recipe)
   return (
     <Modal className={"h-90"} handleClose={closeModalAndClearData} isOpen={isOpen}>
       <div className="bg-gray-100 dark:bg-gray-800 py-8">
@@ -19,7 +19,7 @@ export function FoodModal() {
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
               <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                <Image className="w-full h-full object-cover" src={data.image} alt="meal Image"/>
+                <img className="w-full h-full object-cover" src={data.image ? data.image:""} alt="meal Image"/>
               </div>
               <div className="flex -mx-2 mb-4">
                 <div className="w-full px-2">
@@ -33,17 +33,11 @@ export function FoodModal() {
                 <span className="font-bold text-gray-700 dark:text-gray-300">Description :</span>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
                   {data.readme}
-                </p>
+                </p>  
               </div>
               <div>
                 <span className="font-bold text-gray-700 dark:text-gray-300">Ingredients :</span>
                 <ListIngredients meal={data}/>
-              </div>
-              <div>
-                <span className="font-bold text-gray-700 dark:text-gray-300">Recipe Instruction :</span>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                  {data.readme}
-                </p>
               </div>
             </div>
           </div>
