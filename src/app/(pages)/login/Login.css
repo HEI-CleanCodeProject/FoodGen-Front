@@ -49,7 +49,9 @@
     text-align: center;
     font-family: cursive;
 }
-
+._link_{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
 ._bodyContainer{
     margin-top: 10vh;
 }

@@ -49,7 +49,7 @@ const HomePage = () => {
               src="/images/MenuPointer.png"
               alt="logo"
               className="_pointer"
-              width={40}
+              width={80}
               height={40}
             />
           </div>

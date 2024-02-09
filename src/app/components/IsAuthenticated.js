@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./food/generator/navbar";
 import { authProvider } from "../provider/authProvider/clientSide";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import ProvideToken from "../provider/sessionProvider";
 
 function IsAuthenticatedLogique({children, token}){
   const [user, setUser] = useState(null);
-  
+const router = useRouter
   useEffect(()=>{
     console.log("whoami")
     if(token){
@@ -16,7 +16,7 @@ function IsAuthenticatedLogique({children, token}){
         setUser(user);
       }).catch((err)=>{
         sessionStorage.removeItem(process.env.NEXT_PUBLIC_SESSION)
-        Router.push("/login")
+        router.push("/login")
       });
     }
   },[token])
