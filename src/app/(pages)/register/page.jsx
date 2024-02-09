@@ -13,7 +13,6 @@ export default function Register() {
 }
 
 function RegisterLogique({ UI }) {
-
   const router = useRouter();
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -22,20 +21,23 @@ function RegisterLogique({ UI }) {
       username: "",
       password: "",
       email: "",
-    }
-  })
+    },
+  });
 
   const formSubmit = (data) => {
-    console.log(data)
-    authProvider.createUser(data).then((user) => {
-      console.log("user")
-      if (user) {
-        router.push("/login")
-      }
-    }).catch((e) => {
-      throw e;
-    });
-  }
+    console.log(data);
+    authProvider
+      .createUser(data)
+      .then((user) => {
+        console.log("user");
+        if (user) {
+          router.push("/login");
+        }
+      })
+      .catch((e) => {
+        throw e;
+      });
+  };
 
   return <UI register={register} formSubmit={formSubmit} handleSubmit={handleSubmit} />;
 }
@@ -64,7 +66,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           <h2 className="my-3 text-center text-3xl font-bold tracking-tight">
             Sign up for an account
           </h2>
-          <form class="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
+          <form className="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
             <div>
               <div className="mt-1 _inputList">
               <input

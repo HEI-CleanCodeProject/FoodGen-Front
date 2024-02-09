@@ -87,6 +87,9 @@ background-color: #2121216c;
 ._link{
 padding: 0  30px;
 }
+._hide{
+  display: hidden;
+}
 .left ,.right{
   border: solid 1px;
 }
@@ -113,4 +116,7 @@ padding: 0  30px;
 }
 ._right{
   margin-left:13%;
+}
+._pointer{
+  
 }

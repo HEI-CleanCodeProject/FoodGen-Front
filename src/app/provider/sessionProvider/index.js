@@ -6,16 +6,14 @@ import React,{ useEffect, useState } from "react"
 export default function ProvideToken({Component}){
   const router = useRouter()
   const [token, setToken] = useState("");
-  useEffect(()=>{
+  useEffect(() => {
     const t = sessionStorage.getItem(process.env.NEXT_PUBLIC_SESSION);
-    if(!t){
+    if (!t) {
       router.push("/login");
-    }else{
+    } else {
       setToken(t);
     }
-  },[])
-  if(token === "") return <></>;
-  return(
-    <Component token={token}/>
-  )
+  }, [router]); 
+  if (token === "") return <></>;
+  return <Component token={token} />;
 }

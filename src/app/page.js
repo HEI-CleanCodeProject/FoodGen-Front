@@ -16,14 +16,17 @@ const HomePage = () => {
   return (
     <div className="min-h-screen main_bg">
       <nav className="_NavLink text-white">
+        <label className="_home_logo"  htmlFor="homeLink">
         <Image
-          src="/images/home.png"
-          alt="logo"
-          className="_home_logo"
-          width={100}
-          height={100}
-        />
-        <Link className="_link" href="/">
+            src="/images/home.png"
+            alt="main image"
+            className=""
+            width={102}
+            height={102}
+          />
+        </label>
+        
+        <Link id="homeLink" className="_link _hide" href="/">
           Home
         </Link>
         <Link className="_link" href="/login">
@@ -35,13 +38,22 @@ const HomePage = () => {
       </nav>
       <div className="text-white p-4 flex _left">
         <div className="w-1/2">
+          <div className="flex ">
+            <Image
+          src="/images/MenuBG.png"
+          alt="logo"
+          width={400}
+          height={400}
+        />
           <Image
-            src="/images/foodMenu.png"
-            alt="main image"
-            className=""
-            width={432}
-            height={432}
-          />
+          src="/images/MenuPointer.png"
+          alt="logo"
+          className="_pointer"
+          width={40}
+          height={40}
+        />
+          </div>
+           
         </div>
         <div className="w-1/2 _right">
           <Image
