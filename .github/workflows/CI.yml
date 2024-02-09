@@ -31,4 +31,4 @@ jobs:
         run: npm test
 
       - name: Generate code coverage report
-        run: npm run code-coverage
+        run: npm run test:coverage

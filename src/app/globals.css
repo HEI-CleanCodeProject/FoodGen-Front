@@ -4,44 +4,62 @@
 
 :root {
   /* --color-one:#FBD757; */
-  --color-one:#18da38;
-  --color-two:#2b2c2d;
+  --color-one: #6ae46a;
+  --color-two: #212121;
   /* --color-two:#1e172f; */
-  --color-grey:#616161;
+  --color-grey: #cbcbcb4e;
+  --color-white: rgb(221, 221, 221);
+  --color-three: #f7ca63;
 }
 
 body {
   color: var(--color-two);
+  overflow-y: scroll;
+  background-image: url("/images/backg.png");
+  background-size: cover;
+  background-position: 35%;
 }
-
-.bg-color-1{
+.bg-color-1 {
   background-color: var(--color-one);
 }
 
-.bg-color-2{
+.bg-color-3 {
+  background-color: var(--color-three);
+}
+
+.bg-color-2 {
   background-color: var(--color-two);
 }
 
-.bg-app-grey{
-  background-color: var(--color-grey)
+.bg-color-grey {
+  background-color: var(--color-grey);
 }
 
-.color-1{
+.color-1 {
   color: var(--color-one);
 }
 
-.color-2{
+.color-2 {
   color: var(--color-two);
 }
 
-@layer components{
-  .btn-app-yellow{
-    @apply py-2 px-4 rounded-lg shadow-md bg-color-1;
-    color: var(--color-grey);
+@layer components {
+  .btn-app-1 {
+    @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-3;
+    color: var(--color-two);
   }
-  .btn-app-dark{
-    @apply py-2 px-4 rounded-lg shadow-md bg-color-2;
-    color: var(--color-one);
+  .btn-app-2 {
+    @apply py-2 px-4 rounded-lg shadow-md hover:brightness-95 bg-color-2;
+    color: var(--color-white);
+  }
+  .register-input {
+    @apply px-2 py-3 mt-1 block w-full rounded-md focus:outline-none ;
+    outline: none;
+    background-color: #d0d3e74e;
+    border-color: #21212100;
+    color: rgba(0, 0, 0, 0.704);
+    font-family: cursive;
+    font-size: 16px;
   }
 }
 
@@ -49,4 +67,95 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+.main_bg{
+  background-color: rgba(46, 87, 37, 0.474);
+}
+._home_logo{
+  margin: -3% 0;
+}
+.rightSide{
+  margin-left: 55%;
+}
+._NavLink{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px;
+background-color: #2121216c;
+}
+
+._link{
+  padding-left: 0  40%;
+ margin-left: 90%;
+}
+
+.left ,.right{
+  border: solid 1px;
+}
+._body{
+  display: flex;
+  flex-direction: row;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.917);
+}
+::-webkit-scrollbar-track {
+  background: rgba(49, 52, 50, 0.2);
+}
+.homeImage{
+  border: solid 1px;
+  border-radius: 50%;
+}
+
+._right{
+  margin-top: 5%;
+  margin-left:13%;
+}
+._pointer{
+  width: 90px;
+  height: 120px;
+  padding-bottom: 10%;
+}
+._testMenu{
+  margin-top: 20%;
+  padding-left: 13%;
+}
+._Menu{
+  position: absolute;
+    z-index: 2;
+    top: 3vh;
+    left: 17%;
+    width: 15%;
+    height: 40%;
+  color: #040303ce;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border: solid 0px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+
+._textMenu{
+  width: 18vw;
+  margin-top: 25%;
+  text-align: center;
+}
+._left_flex{
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.m{
+  display: flex;
+  flex-direction: row;
+}
+._Logo{
+  z-index: 2;
+  position: absolute;
+top: -5%;
 }
