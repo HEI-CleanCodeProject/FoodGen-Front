@@ -112,14 +112,32 @@ padding: 0  30px;
   border: solid 1px;
   border-radius: 50%;
 }
-._left{
-  margin: 5% 5%;
-}
+
 ._right{
+  margin-top: 2%;
   margin-left:13%;
 }
 ._pointer{
-  margin-left: -50px;
-  width: 210px;
-  height: 120px;
+  width: 90px;
+  height: 150px;
+}
+._testMenu{
+  padding-left: 10%;
+}
+._Menu{
+  position: absolute;
+    z-index: 2;
+    top: 1;
+    left: 22%;
+    width: 15%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+  color: #e6dede;
+  border: solid 1px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+.mouse{
+  margin-left: 100%;
 }
