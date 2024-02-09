@@ -25,17 +25,19 @@ function RegisterLogique({ UI }) {
   });
 
   const formSubmit = (data) => {
-    authProvider
-      .createUser(data)
-      .then((user) => {
-        if (user) {
-          router.push("/login");
-        }
+    console.log(data)
+    authProvider.createUser(data).then((user) => {
+
+      authProvider.login(user).then((token) => {
+        sessionStorage.setItem(process.env.NEXT_PUBLIC_SESSION, token);
+        router.push("/food/form")
+      }).catch(()=>{
+        router.push("login")
       })
-      .catch((e) => {
-        throw e;
-      });
-  };
+    }).catch((e) => {
+      throw e;
+    });
+  }
 
   return <UI register={register} formSubmit={formSubmit} handleSubmit={handleSubmit} />;
 }
@@ -65,33 +67,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
             Sign up for an account
           </h2>
           <form className="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
-            <div>
-              <div className="mt-1 _inputList">
-              <input
-                {...register("first_name", { required: true })}
-                name="first_name"
-                type="text"
-                autoComplete="current-first_name"
-                required
-                className=" register-input"
-                placeholder="Firstname"
-              />
-              </div>
-            </div>
-
-            <div>
-              <div className="mt-1 _inputList">
-                <input
-                  {...register("last_name", { required: true })}
-                  name="last_name"
-                  type="text"
-                  autoComplete="current-last_name"
-                  required
-                  className="register-input"
-                  placeholder="Lastname"
-                />
-              </div>
-            </div>
             <div>
               <div className="mt-1 _inputList">
                 <input
