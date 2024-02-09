@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 function IsAuthenticatedLogique({children, token}){
   const router = useRouter();
   const [user, setUser] = useState(null);
-const router = useRouter
   useEffect(()=>{
 
     if(token !== "" && token !== null){
