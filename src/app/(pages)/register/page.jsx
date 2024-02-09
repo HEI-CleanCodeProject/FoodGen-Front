@@ -67,33 +67,6 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
           <form className="space-y-6" method="POST" onSubmit={handleSubmit(formSubmit)}>
             <div>
               <div className="mt-1 _inputList">
-              <input
-                {...register("first_name", { required: true })}
-                name="first_name"
-                type="text"
-                autoComplete="current-first_name"
-                required
-                className=" register-input"
-                placeholder="Firstname"
-              />
-              </div>
-            </div>
-
-            <div>
-              <div className="mt-1 _inputList">
-                <input
-                  {...register("last_name", { required: true })}
-                  name="last_name"
-                  type="text"
-                  autoComplete="current-last_name"
-                  required
-                  className="register-input"
-                  placeholder="Lastname"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="mt-1 _inputList">
                 <input
                   {...register("username", { required: true })}
                   name="username"

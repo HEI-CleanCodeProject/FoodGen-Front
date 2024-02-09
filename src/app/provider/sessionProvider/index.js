@@ -13,7 +13,10 @@ export default function ProvideToken({Component}){
     } else {
       setToken(t);
     }
-  }, [router]); 
-  if (token === "") return <></>;
-  return <Component token={token} />;
+  },[token, router])
+  console.log(token)
+  if(token === "") return <></>;
+  return(
+    <Component token={token}/>
+  )
 }

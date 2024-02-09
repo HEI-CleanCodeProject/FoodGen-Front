@@ -6,8 +6,8 @@ function ListIngredientsUI({ ingredients }) {
   console.log(ingredients)
     return (
         <ul class="list-disc list-inside text-[--color-white] font-semibold">
-          {ingredients && ingredients.map((i, k) => (
-            <li key={k}>{i.name}</li>
+          {ingredients && ingredients.map((i,j) => (
+            <li key={"ingredient" + j}>{i.name}</li>
           ))}
         </ul>
     )
