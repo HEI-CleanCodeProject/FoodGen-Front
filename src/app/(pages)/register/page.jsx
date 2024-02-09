@@ -109,7 +109,7 @@ function RegisterSimpleDesignUi({ register, formSubmit, handleSubmit }) {
                   </div>
                 </div>
                 <div>
-                  <label htmlForfor="password" className="block font-medium ">Email</label>
+                  <label htmlFor="password" className="block font-medium ">Email</label>
                   <div className="mt-1 _inputList">
                     <input
                       {...register("email", {

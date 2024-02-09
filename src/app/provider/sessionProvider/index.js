@@ -14,7 +14,7 @@ export default function ProvideToken({Component}){
     }else{
       setToken(t);
     }
-  },[token])
+  },[token, router])
   console.log(token)
   if(token === "") return <></>;
   return(

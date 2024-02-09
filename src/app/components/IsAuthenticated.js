@@ -20,7 +20,7 @@ function IsAuthenticatedLogique({children, token}){
         router.push("/login")
       });
     }
-  },[token])
+  },[token, router])
 
   return(
     <>
