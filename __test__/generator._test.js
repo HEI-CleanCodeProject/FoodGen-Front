@@ -1,9 +1,15 @@
 import React from "react";
-import { describe, it, expect} from "@jest/globals";
+import {jest, describe, it, expect} from "@jest/globals";
 import { fireEvent, render, screen } from "@testing-library/react";
 import Generator from "@/app/(pages)/food/generator/page";
 import Navbar from "@/app/components/food/generator/navbar";
 import ContextProvider from "@/app/contextProvider";
+
+jest.mock("next/navigation", ()=>({
+  useRouter:()=>({
+    push:jest.fn()
+  })
+}));
 
 describe("Generator TestCase ", () => {
   beforeAll(()=>{

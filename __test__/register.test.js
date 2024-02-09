@@ -1,30 +1,34 @@
-import React, { use } from "react";
+import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, it, expect} from "@jest/globals";
 import Register from "@/app/(pages)/register/page";
+import { useForm } from "react-hook-form";
 
-// jest.mock("@/app/provider/authProvider/clientSide");
-// jest.mock("react-hook-form",() => (
-//   {
-//     useForm:(values)=>{
-//       return {
-//         register:jest.fn(),
-//         handleSubmit:jest.fn()
-//       }
-//     }
-//   }
-// ));
-// jest.mock("next/navigation", ()=>(
-//   {
-//     useRouter:jest.fn()
-//   }
-// ));
+jest.mock("@/app/provider/authProvider/clientSide");
 
-xdescribe("/describe components test",() => {
+jest.mock("react-hook-form",() => (
+  {
+    useForm:(values)=>{
+      return {
+        register:jest.fn(),
+        handleSubmit:jest.fn()
+      }
+    }
+  }
+));
+jest.mock("next/navigation", ()=>(
+  {
+    useRouter:jest.fn()
+  }
+));
+
+describe("/describe components test",() => {
   it("should render the register page",async () => {
     render(
       <Register />
     );
+    const { handleSubmit } = useForm({defaultValues:{mock:'oke'}})
+
     const firstname = screen.findByPlaceholderText("Firstname");
     const lastname = screen.findByPlaceholderText("Lastname");
     const username = screen.findByPlaceholderText("Username");
@@ -47,8 +51,8 @@ xdescribe("/describe components test",() => {
       button.then((btn)=>{
         console.log("clicked")
         fireEvent.click(btn)
+        expect(handleSubmit).toBeCalled();
       })
     })
-    expect(jest.fn()).toBeCalled();
   })
 })
